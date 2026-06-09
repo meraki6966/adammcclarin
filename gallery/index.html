@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gallery | Adam McClarin</title>
+<meta name="description" content="The Gallery. Four books, selected writing, and a self-portrait. The work of Adam McClarin, author, builder, and Reiki practitioner.">
+<meta property="og:title" content="Gallery | Adam McClarin">
+<meta property="og:description" content="Four books, selected writing, and a self-portrait. The work of Adam McClarin.">
+<meta property="og:url" content="https://adammcclarin.com/gallery">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Gallery | Adam McClarin">
+<meta name="twitter:description" content="Books, writing, and visual work.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/assets/styles.css">
+
+<style>
+/* ── GALLERY BOOKS (shelf) ── */
+.gallery-books {
+  padding: 140px 0 160px;
+  background: var(--cream);
+}
+.gallery-books-header {
+  max-width: 1100px;
+  margin: 0 auto 96px;
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 80px;
+  align-items: end;
+}
+.gallery-books-header .eyebrow { margin-bottom: 22px; }
+.gallery-books-header h2 { margin-bottom: 0; }
+.gallery-books-header-right p {
+  font-size: 1.02rem;
+  line-height: 1.8;
+  color: var(--muted);
+  padding-bottom: 6px;
+}
+.gallery-books-grid {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 48px;
+}
+.gbook {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.35s ease;
+}
+.gbook:hover { transform: translateY(-8px); }
+.gbook-cover {
+  aspect-ratio: 2 / 3;
+  background: var(--cream-2);
+  overflow: hidden;
+  margin-bottom: 28px;
+  position: relative;
+  box-shadow: var(--shadow-book);
+  transition: box-shadow 0.35s ease;
+}
+.gbook:hover .gbook-cover {
+  box-shadow: 0 30px 60px rgba(31,24,18,0.28);
+}
+.gbook-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.gbook-flag {
+  position: absolute;
+  top: 14px; left: 14px;
+  background: var(--gold-soft);
+  color: var(--gold-warm);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.52rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  padding: 6px 10px;
+  z-index: 1;
+  border: 1px solid var(--gold);
+}
+.gbook-cover.placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 32px 22px;
+  background: var(--gold-soft);
+  border: 1px solid var(--gold);
+  color: var(--ink-warm);
+}
+.gbook-cover.placeholder .gbook-ph-mono {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--gold-warm);
+  margin-bottom: 18px;
+}
+.gbook-cover.placeholder .gbook-ph-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.45rem;
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--ink-warm);
+  font-style: normal;
+  margin-bottom: 14px;
+}
+.gbook-cover.placeholder .gbook-ph-rule {
+  width: 36px;
+  height: 1px;
+  background: var(--gold);
+  margin-bottom: 14px;
+}
+.gbook-cover.placeholder .gbook-ph-sub {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.58rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold-warm);
+}
+.gbook-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--ink-warm);
+  line-height: 1.22;
+  margin-bottom: 12px;
+  font-style: normal;
+}
+.gbook-desc {
+  font-size: 0.92rem;
+  color: var(--muted);
+  line-height: 1.75;
+  margin-bottom: 22px;
+  flex-grow: 1;
+}
+.gbook-link {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  border-bottom: 1px solid var(--gold);
+  padding-bottom: 4px;
+  align-self: flex-start;
+  transition: color 0.2s, border-color 0.2s;
+}
+.gbook:hover .gbook-link { color: var(--gold-warm); border-color: var(--gold-warm); }
+.gbook.placeholder .gbook-link { color: var(--muted-soft); border-color: var(--muted-soft); }
+
+.gallery-books-footer {
+  max-width: 1100px;
+  margin: 80px auto 0;
+  padding: 0 40px;
+  text-align: center;
+}
+
+/* ── PORTRAIT (warm-dark, not pure ink) ── */
+.portrait-section {
+  padding: 160px 0;
+  background: var(--warm-dark);
+  color: var(--cream);
+  position: relative;
+  overflow: hidden;
+}
+.portrait-section::before {
+  content: '';
+  position: absolute;
+  top: -100px; right: -100px;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(184,134,11,0.14) 0%, transparent 70%);
+  pointer-events: none;
+}
+.portrait-section::after {
+  content: '';
+  position: absolute;
+  bottom: -100px; left: -100px;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(184,134,11,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+.portrait-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  gap: 80px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+.portrait-visual {
+  aspect-ratio: 4 / 5;
+  background: var(--warm-dark-2);
+  overflow: hidden;
+  position: relative;
+  border: 1px solid rgba(184,134,11,0.18);
+  box-shadow: var(--shadow-lg);
+}
+.portrait-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.portrait-content .eyebrow { color: var(--gold); margin-bottom: 26px; }
+.portrait-content h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.2rem, 4.5vw, 3.2rem);
+  font-weight: 700;
+  color: var(--cream);
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  margin-bottom: 32px;
+  font-style: normal;
+}
+.portrait-content h2 em { color: var(--gold); font-style: normal; font-weight: 700; }
+.portrait-content p {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: rgba(253,252,247,0.82);
+  margin-bottom: 22px;
+}
+.portrait-meta {
+  margin-top: 40px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(184,134,11,0.22);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px 32px;
+}
+.portrait-meta-item {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(253,252,247,0.8);
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+.portrait-meta-item::before {
+  content: '';
+  width: 8px; height: 8px;
+  background: var(--gold);
+  flex-shrink: 0;
+  align-self: center;
+}
+
+/* ── WRITING QUOTES (book margins) ── */
+.quotes-section {
+  padding: 160px 0;
+  background: var(--cream-2);
+}
+.quotes-header {
+  max-width: 1100px;
+  margin: 0 auto 80px;
+  padding: 0 40px;
+  text-align: center;
+}
+.quotes-header .eyebrow { margin-bottom: 22px; }
+.quotes-header h2 { margin-bottom: 0; }
+.quotes-grid {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 56px 64px;
+}
+.qcard {
+  border-left: 1px solid var(--gold);
+  padding: 8px 0 8px 32px;
+  display: flex;
+  flex-direction: column;
+}
+.qcard blockquote {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  font-weight: 400;
+  line-height: 1.55;
+  color: var(--ink-warm);
+  font-style: normal;
+  letter-spacing: -0.005em;
+  margin-bottom: 24px;
+}
+.qcard cite {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--gold-warm);
+  font-style: normal;
+}
+
+/* ── GALLERY RESPONSIVE ── */
+@media (max-width: 1100px) {
+  .gallery-books-header { grid-template-columns: 1fr; gap: 32px; }
+  .gallery-books-grid { grid-template-columns: repeat(2, 1fr); gap: 56px; }
+  .portrait-inner { grid-template-columns: 1fr; gap: 56px; }
+  .portrait-visual { max-width: 460px; margin: 0 auto; width: 100%; }
+  .quotes-grid { grid-template-columns: 1fr; gap: 44px; }
+}
+@media (max-width: 720px) {
+  .gallery-books { padding: 80px 0 100px; }
+  .gallery-books-header,
+  .gallery-books-grid,
+  .gallery-books-footer { padding: 0 24px; }
+  .gallery-books-grid { grid-template-columns: 1fr; gap: 56px; }
+  .portrait-section { padding: 100px 0; }
+  .portrait-inner { padding: 0 24px; }
+  .portrait-meta { grid-template-columns: 1fr; }
+  .quotes-section { padding: 100px 0; }
+  .quotes-header,
+  .quotes-grid { padding: 0 24px; }
+  .qcard { padding-left: 24px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">Adam. McClarin<span>.</span></a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+    <div class="nav-links">
+      <a href="/#books">Books</a>
+      <a href="/articles">Writing</a>
+      <a href="/gallery" class="is-current">Gallery</a>
+      <a href="https://merakislove.com" target="_blank" rel="noopener" class="nav-ext">Soulful Tech</a>
+      <a href="https://calendly.com/hello-merakislove/new-meeting" target="_blank" rel="noopener" class="nav-cta">Book a Briefing</a>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<section class="page-header">
+  <div class="page-header-inner">
+    <div>
+      <div class="eyebrow has-rule">The Gallery</div>
+      <h1>Books, writing, and <em>visual work.</em></h1>
+    </div>
+    <div class="page-header-right">
+      <p>Four books in print or on the way. Selected lines from the writing. A self-portrait that says what the prose does not.</p>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY BOOKS -->
+<section class="gallery-books">
+  <div class="gallery-books-header">
+    <div>
+      <div class="eyebrow has-rule">The Books</div>
+      <h2 class="section-title">Four titles, <em>one shelf.</em></h2>
+    </div>
+    <div class="gallery-books-header-right">
+      <p>Three in print, one in progress. Each one written for a different reader, a different moment, a different question.</p>
+    </div>
+  </div>
+  <div class="gallery-books-grid">
+    <a href="https://www.amazon.com/stores/Adam-Mcclarin/author/B0G2L31YB8" target="_blank" rel="noopener" class="gbook">
+      <div class="gbook-cover">
+        <span class="gbook-flag">Featured</span>
+        <img src="/images/weight-of-the-mantle.png" alt="The Weight of the Mantle by Adam McClarin">
+      </div>
+      <h3 class="gbook-title">The Weight of the Mantle</h3>
+      <p class="gbook-desc">A Leader's Journey from Control to Purpose. Twenty years across five corporate environments and what it costs to lead people well inside systems that were never built for them.</p>
+      <span class="gbook-link">Read on Amazon →</span>
+    </a>
+    <a href="https://www.amazon.com/AI-Prompt-Playbook-Mastering-Essential/dp/B0FK35P8TS" target="_blank" rel="noopener" class="gbook">
+      <div class="gbook-cover">
+        <img src="/images/ai-prompt-playbook.jpg" alt="The AI Prompt Playbook by Adam McClarin">
+      </div>
+      <h3 class="gbook-title">The AI Prompt Playbook</h3>
+      <p class="gbook-desc">Mastering Gemini, Grok, and ChatGPT. A guide to crafting prompts that actually work. Beginner-to-advanced examples and the techniques behind real writing tools.</p>
+      <span class="gbook-link">Read on Amazon →</span>
+    </a>
+    <a href="https://www.amazon.com/stores/Adam-Mcclarin/author/B0G2L31YB8" target="_blank" rel="noopener" class="gbook">
+      <div class="gbook-cover">
+        <img src="/images/daily-routine-reset.jpeg" alt="Daily Routine Reset by Adam McClarin">
+      </div>
+      <h3 class="gbook-title">Daily Routine Reset</h3>
+      <p class="gbook-desc">A customizable template for peaceful mornings and evenings. Built for parents juggling the laundry, the meals, the meltdowns, and the quiet pockets of self.</p>
+      <span class="gbook-link">Read on Amazon →</span>
+    </a>
+    <div class="gbook placeholder">
+      <div class="gbook-cover placeholder">
+        <div class="gbook-ph-mono">Coming Soon</div>
+        <div class="gbook-ph-title">The Fourth Title</div>
+        <div class="gbook-ph-rule"></div>
+        <div class="gbook-ph-sub">In Progress</div>
+      </div>
+      <h3 class="gbook-title">Forthcoming</h3>
+      <p class="gbook-desc">A fourth title in progress. Cover and details will land here when the manuscript is finished.</p>
+      <span class="gbook-link">Cover coming soon</span>
+    </div>
+  </div>
+  <div class="gallery-books-footer">
+    <a href="https://www.amazon.com/stores/Adam-Mcclarin/author/B0G2L31YB8" target="_blank" rel="noopener" class="qlink">View Full Author Page on Amazon ↗</a>
+  </div>
+</section>
+
+<!-- SELF-PORTRAIT -->
+<section class="portrait-section">
+  <div class="portrait-inner">
+    <div class="portrait-visual">
+      <img src="/images/adam-mcclarin-portrait-painterly.jpg" alt="Painterly self-portrait of Adam McClarin">
+    </div>
+    <div class="portrait-content">
+      <div class="eyebrow has-rule">The Visual Work</div>
+      <h2>Self-portrait. <em>Mixed media.</em></h2>
+      <p>A painterly self-portrait that sits across from the writing. The books say one thing in words. The image says the same thing in color, shadow, and stillness.</p>
+      <p>Visual work runs as a quiet practice next to the books. Not a portfolio, not a product. A way to think with the hands when the page has gone quiet.</p>
+      <div class="portrait-meta">
+        <div class="portrait-meta-item">Self-portrait</div>
+        <div class="portrait-meta-item">Mixed media</div>
+        <div class="portrait-meta-item">Original work</div>
+        <div class="portrait-meta-item">2025</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WRITING QUOTES -->
+<section class="quotes-section">
+  <div class="quotes-header">
+    <div class="eyebrow has-rule">Selected Lines</div>
+    <h2 class="section-title">Four lines, <em>from the books.</em></h2>
+  </div>
+  <div class="quotes-grid">
+    <div class="qcard">
+      <blockquote>"The gift consumed everything. His presence. His patience. His marriage. His body. And finally, himself."</blockquote>
+      <cite>The Weight of the Mantle</cite>
+    </div>
+    <div class="qcard">
+      <blockquote>"A memoir of what happens to a person who is genuinely good at leading other people, and what it costs to do that work inside systems that were never designed for the full flourishing of the people inside them."</blockquote>
+      <cite>The Weight of the Mantle</cite>
+    </div>
+    <div class="qcard">
+      <blockquote>"Meraki. The Greek concept of pouring your genuine self into your work. A new framework for what leadership can look like when the leader remembers they are the wire, not the source."</blockquote>
+      <cite>The Weight of the Mantle</cite>
+    </div>
+    <div class="qcard">
+      <blockquote>"For anyone who has ever come home from a winning day feeling nothing. For anyone who has stood between meetings and wondered if the version of themselves the environment was producing was a version they still recognized."</blockquote>
+      <cite>The Weight of the Mantle</cite>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="cta-band">
+  <div class="cta-band-inner">
+    <div class="eyebrow has-rule">Where to Read More</div>
+    <h2>Books on Amazon. Writing on <em>Substack.</em></h2>
+    <p>The books are at the author page. The ongoing writing lives on Medium and Substack. Pick a door.</p>
+    <div class="cta-band-btns">
+      <a href="https://www.amazon.com/stores/Adam-Mcclarin/author/B0G2L31YB8" target="_blank" rel="noopener" class="btn btn-gold">Read the Books ↗</a>
+      <a href="https://adammcclarin1.substack.com" target="_blank" rel="noopener" class="btn btn-ghost">Subscribe on Substack ↗</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-brand">Adam. McClarin<span>.</span></div>
+  <div class="footer-tagline">Builder · Writer · Reiki Practitioner · Texas · © 2026</div>
+  <a href="mailto:hello@merakislove.com" class="footer-email">hello@merakislove.com</a>
+  <div class="footer-links">
+    <a href="https://merakislove.com" target="_blank" rel="noopener">Soulful Tech</a>
+    <a href="https://www.linkedin.com/in/adammcclarin/" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://medium.com/@adammcclarin" target="_blank" rel="noopener">Medium</a>
+    <a href="https://adammcclarin1.substack.com" target="_blank" rel="noopener">Substack</a>
+    <a href="/">Home</a>
+    <a href="/articles">Writing</a>
+  </div>
+  <div class="footer-copy">CISSP Certified · Reiki Master · Karuna Reiki Practitioner · 20 Years Systems Engineering</div>
+</footer>
+
+<!-- Mobile nav JS -->
+<script>
+(function() {
+  const toggle = document.querySelector('.nav-toggle');
+  const links = document.querySelector('.nav-links');
+  if (toggle && links) {
+    toggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const open = links.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  }
+})();
+</script>
+
+</body>
+</html>

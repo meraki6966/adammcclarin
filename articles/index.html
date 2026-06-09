@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Writing | Adam McClarin</title>
+<meta name="description" content="The writing of Adam McClarin. Medium articles, Substack dispatches, and the ongoing journal. New pieces on leadership, building with intention, and the cost of becoming.">
+<meta property="og:title" content="Writing | Adam McClarin">
+<meta property="og:description" content="Medium articles, Substack dispatches, and the ongoing journal.">
+<meta property="og:url" content="https://adammcclarin.com/articles">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Writing | Adam McClarin">
+<meta name="twitter:description" content="Medium articles, Substack dispatches, and the ongoing journal.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/assets/styles.css">
+
+<style>
+/* ── FEATURED & PRESS (curated highlights) ── */
+.featured-section {
+  padding: 140px 0 120px;
+  background: var(--cream-2);
+  border-bottom: 1px solid var(--border-soft);
+}
+.featured-header {
+  max-width: 1100px;
+  margin: 0 auto 64px;
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 80px;
+  align-items: end;
+}
+.featured-header .eyebrow { margin-bottom: 22px; }
+.featured-header h2 { margin-bottom: 0; }
+.featured-header-right p {
+  font-size: 1rem;
+  line-height: 1.85;
+  color: var(--muted);
+  padding-bottom: 6px;
+}
+.featured-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 36px;
+}
+
+/* ── MEDIUM SECTION (reading room, 6 posts) ── */
+.medium-section {
+  padding: 160px 0;
+  background: var(--paper);
+}
+.medium-header {
+  max-width: 1100px;
+  margin: 0 auto 80px;
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: 1.3fr 1fr auto;
+  gap: 60px;
+  align-items: end;
+}
+.medium-header .eyebrow { margin-bottom: 22px; }
+.medium-header h2 { margin-bottom: 0; }
+.medium-header-right p {
+  font-size: 1rem;
+  line-height: 1.85;
+  color: var(--muted);
+  padding-bottom: 6px;
+}
+
+.medium-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 36px;
+}
+.medium-card {
+  background: var(--cream);
+  padding: 44px 40px;
+  border: 1px solid transparent;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+.medium-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+.medium-card-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 18px;
+}
+.medium-card-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.65rem;
+  font-weight: 700;
+  color: var(--ink-warm);
+  line-height: 1.22;
+  margin-bottom: 18px;
+  font-style: normal;
+}
+.medium-card-desc {
+  font-size: 0.94rem;
+  line-height: 1.8;
+  color: var(--muted);
+  margin-bottom: 24px;
+  flex-grow: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.medium-card-meta {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted-soft);
+}
+.medium-card-meta span:not(:last-child)::after {
+  content: '·';
+  margin: 0 10px;
+  color: var(--muted-soft);
+}
+.medium-loading {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 60px 20px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* ── SUBSTACK SECTION (warmer, less formal) ── */
+.substack-section {
+  padding: 180px 0;
+  background: var(--cream-2);
+}
+.substack-inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.substack-content .eyebrow { margin-bottom: 22px; }
+.substack-content h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  font-weight: 700;
+  color: var(--ink-warm);
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  margin-bottom: 26px;
+  font-style: normal;
+}
+.substack-content h2 em { color: var(--gold); font-style: normal; font-weight: 700; }
+.substack-content p {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: var(--muted);
+  margin-bottom: 22px;
+}
+
+.substack-form {
+  padding: 0;
+}
+.substack-form-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gold);
+  padding-top: 18px;
+  border-top: 1px solid var(--gold);
+  display: block;
+  margin-bottom: 24px;
+}
+.substack-form-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: var(--ink-warm);
+  line-height: 1.2;
+  margin-bottom: 18px;
+  font-style: normal;
+}
+.substack-form-sub {
+  font-size: 0.96rem;
+  line-height: 1.8;
+  color: var(--muted);
+  margin-bottom: 32px;
+}
+.substack-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.substack-form input[type="email"] {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.98rem;
+  padding: 16px 18px;
+  border: 1px solid var(--border-strong);
+  background: var(--cream);
+  color: var(--ink-warm);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  width: 100%;
+}
+.substack-form input[type="email"]:focus {
+  outline: none;
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(184,134,11,0.12);
+}
+.substack-form button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 15px 24px;
+  background: var(--ink-warm);
+  color: var(--cream);
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: 0.76rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: background 0.25s, transform 0.2s;
+}
+.substack-form button:hover { background: var(--gold); transform: translateY(-1px); }
+.substack-form-note {
+  margin-top: 20px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted-soft);
+}
+.substack-form-note a {
+  color: var(--gold);
+  text-decoration: none;
+  border-bottom: 1px solid var(--gold);
+  padding-bottom: 1px;
+  transition: color 0.2s, border-color 0.2s;
+}
+.substack-form-note a:hover { color: var(--gold-warm); border-color: var(--gold-warm); }
+
+/* ── ARTICLES RESPONSIVE ── */
+@media (max-width: 1100px) {
+  .featured-header { grid-template-columns: 1fr; gap: 28px; }
+  .featured-grid { grid-template-columns: 1fr; }
+  .medium-header { grid-template-columns: 1fr; gap: 28px; }
+  .medium-grid { grid-template-columns: 1fr; }
+  .substack-inner { grid-template-columns: 1fr; gap: 56px; }
+}
+@media (max-width: 720px) {
+  .featured-section { padding: 100px 0; }
+  .featured-header,
+  .featured-grid { padding: 0 24px; }
+  .medium-section { padding: 100px 0; }
+  .medium-header,
+  .medium-grid { padding: 0 24px; }
+  .medium-card { padding: 36px 28px; }
+  .substack-section { padding: 100px 0; }
+  .substack-inner { padding: 0 24px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">Adam. McClarin<span>.</span></a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+    <div class="nav-links">
+      <a href="/#books">Books</a>
+      <a href="/articles" class="is-current">Writing</a>
+      <a href="/gallery">Gallery</a>
+      <a href="https://merakislove.com" target="_blank" rel="noopener" class="nav-ext">Soulful Tech</a>
+      <a href="https://calendly.com/hello-merakislove/new-meeting" target="_blank" rel="noopener" class="nav-cta">Book a Briefing</a>
+    </div>
+  </div>
+</nav>
+
+<!-- PAGE HEADER -->
+<section class="page-header">
+  <div class="page-header-inner">
+    <div>
+      <div class="eyebrow has-rule">The Writing</div>
+      <h1>The writing. <em>All of it.</em></h1>
+    </div>
+    <div class="page-header-right">
+      <p>Medium articles, Substack dispatches, and the ongoing journal. New pieces publish as they finish.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED & PRESS (curated highlights) -->
+<section class="featured-section">
+  <div class="featured-header">
+    <div>
+      <div class="eyebrow has-rule">Featured & Press</div>
+      <h2 class="section-title">Out in <em>the world.</em></h2>
+    </div>
+    <div class="featured-header-right">
+      <p>Recent features, press, and new releases. The work as it lands beyond the desk and into the hands of readers.</p>
+    </div>
+  </div>
+  <div class="featured-grid">
+    <a href="https://hackernoon.com/the-ai-tools-helping-veterans-access-ptsd-support" target="_blank" rel="noopener" class="medium-card">
+      <div class="medium-card-label">HackerNoon · Press</div>
+      <h3 class="medium-card-title">The AI Tools Helping Veterans Access PTSD Support</h3>
+      <p class="medium-card-desc">Featured on HackerNoon. A look at the AI tools opening real doors to PTSD support for veterans, and the case for building technology that meets people in the hardest moments.</p>
+      <div class="medium-card-meta"><span>HackerNoon</span><span>Jun 9, 2026</span></div>
+    </a>
+    <a href="https://meraki6966.github.io/weight-of-the-mantle" target="_blank" rel="noopener" class="medium-card">
+      <div class="medium-card-label">Book · Available Now</div>
+      <h3 class="medium-card-title">The Weight of the Mantle: A Leader's Journey from Control to Purpose</h3>
+      <p class="medium-card-desc">Available now. The unguarded account of twenty years of leadership across five corporate environments, and what it costs to lead people well inside systems that were never built for them.</p>
+      <div class="medium-card-meta"><span>Book</span><span>Jun 9, 2026</span></div>
+    </a>
+  </div>
+</section>
+
+<!-- MEDIUM (live RSS, 6 posts) -->
+<section class="medium-section">
+  <div class="medium-header">
+    <div>
+      <div class="eyebrow has-rule">From Medium</div>
+      <h2 class="section-title">Recent <em>dispatches.</em></h2>
+    </div>
+    <div class="medium-header-right">
+      <p>The longer pieces. Essays on leadership, building with intention, faith, and the cost of becoming. Published as they finish.</p>
+    </div>
+    <a href="https://medium.com/@adammcclarin" target="_blank" rel="noopener" class="qlink">All on Medium ↗</a>
+  </div>
+  <div class="medium-grid" id="medium-grid">
+    <div class="medium-loading">Loading recent posts...</div>
+  </div>
+</section>
+
+<!-- SUBSTACK -->
+<section class="substack-section">
+  <div class="substack-inner">
+    <div class="substack-content">
+      <div class="eyebrow has-rule">From Substack</div>
+      <h2>The ongoing <em>journal.</em></h2>
+      <p>Shorter dispatches. The notes between the books. The thinking out loud that turns into longer work later.</p>
+      <p>New pieces land in your inbox. No paywall on the main feed. Read at your own pace.</p>
+    </div>
+    <div class="substack-form">
+      <div class="substack-form-label">Subscribe</div>
+      <div class="substack-form-title">Get the journal by email.</div>
+      <p class="substack-form-sub">Drop your email here and finish subscribing on Substack. One click away.</p>
+      <form action="https://adammcclarin1.substack.com/subscribe" method="get" target="_blank">
+        <input type="email" name="email" placeholder="you@example.com" required aria-label="Email address">
+        <button type="submit">Subscribe on Substack ↗</button>
+      </form>
+      <div class="substack-form-note">
+        Or read first at <a href="https://adammcclarin1.substack.com" target="_blank" rel="noopener">adammcclarin1.substack.com</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="cta-band">
+  <div class="cta-band-inner">
+    <div class="eyebrow has-rule">Two More Doors</div>
+    <h2>Read the books. Visit <em>the studio.</em></h2>
+    <p>The books carry the longer arguments. The studio is where the building happens. Both run in parallel.</p>
+    <div class="cta-band-btns">
+      <a href="https://www.amazon.com/stores/Adam-Mcclarin/author/B0G2L31YB8" target="_blank" rel="noopener" class="btn btn-gold">Read the Books ↗</a>
+      <a href="https://merakislove.com" target="_blank" rel="noopener" class="btn btn-ghost">Visit Soulful Tech ↗</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-brand">Adam. McClarin<span>.</span></div>
+  <div class="footer-tagline">Builder · Writer · Reiki Practitioner · Texas · © 2026</div>
+  <a href="mailto:hello@merakislove.com" class="footer-email">hello@merakislove.com</a>
+  <div class="footer-links">
+    <a href="https://merakislove.com" target="_blank" rel="noopener">Soulful Tech</a>
+    <a href="https://www.linkedin.com/in/adammcclarin/" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://medium.com/@adammcclarin" target="_blank" rel="noopener">Medium</a>
+    <a href="https://adammcclarin1.substack.com" target="_blank" rel="noopener">Substack</a>
+    <a href="/">Home</a>
+    <a href="/gallery">Gallery</a>
+  </div>
+  <div class="footer-copy">CISSP Certified · Reiki Master · Karuna Reiki Practitioner · 20 Years Systems Engineering</div>
+</footer>
+
+<!-- Mobile nav JS -->
+<script>
+(function() {
+  const toggle = document.querySelector('.nav-toggle');
+  const links = document.querySelector('.nav-links');
+  if (toggle && links) {
+    toggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const open = links.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  }
+})();
+</script>
+
+<!-- Medium RSS feed via rss2json (6 articles) -->
+<script>
+(function() {
+  const grid = document.getElementById('medium-grid');
+  if (!grid) return;
+  const feed = 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent('https://medium.com/feed/@adammcclarin');
+
+  function stripHtml(html) {
+    const tmp = document.createElement('div');
+    tmp.innerHTML = html;
+    return (tmp.textContent || tmp.innerText || '').trim();
+  }
+  function formatDate(d) {
+    try {
+      return new Date(d).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+    } catch (e) { return ''; }
+  }
+  function readTime(text) {
+    const words = (text || '').split(/\s+/).length;
+    return Math.max(1, Math.round(words / 220)) + ' min read';
+  }
+
+  fetch(feed)
+    .then(r => r.json())
+    .then(data => {
+      if (!data || data.status !== 'ok' || !Array.isArray(data.items)) {
+        grid.innerHTML = '<div class="medium-loading">Could not load posts. Read everything on Medium.</div>';
+        return;
+      }
+      const items = data.items.slice(0, 6);
+      grid.innerHTML = items.map(item => {
+        const desc = stripHtml(item.description).slice(0, 240);
+        const date = formatDate(item.pubDate);
+        return '<a href="' + item.link + '" target="_blank" rel="noopener" class="medium-card">'
+          + '<div class="medium-card-label">Medium</div>'
+          + '<h3 class="medium-card-title">' + item.title + '</h3>'
+          + '<p class="medium-card-desc">' + desc + '</p>'
+          + '<div class="medium-card-meta"><span>' + date + '</span><span>' + readTime(stripHtml(item.description)) + '</span></div>'
+          + '</a>';
+      }).join('');
+    })
+    .catch(() => {
+      grid.innerHTML = '<div class="medium-loading">Could not load posts. Read everything on Medium.</div>';
+    });
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adam McClarin | Builder. Writer. Reiki Practitioner.</title>
+<meta name="description" content="Adam McClarin. Builder, writer, and Reiki practitioner. Author of four books. Founder of Meraki is Love. CISSP-certified, with twenty years of systems engineering.">
+<meta name="keywords" content="Adam McClarin, soulful tech, Meraki is Love, Reiki, Karuna Reiki, ghostwriter, speaker, CISSP, author, The Weight of the Mantle, AI Prompt Playbook, Daily Routine Reset">
+<meta property="og:title" content="Adam McClarin | Builder. Writer. Reiki Practitioner.">
+<meta property="og:description" content="The personal site of Adam McClarin. Four books, a private Reiki practice, and a studio for client work at Soulful Tech.">
+<meta property="og:url" content="https://adammcclarin.com">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Adam McClarin | Builder. Writer. Reiki Practitioner.">
+<meta name="twitter:description" content="Builder, writer, and Reiki practitioner. The studio for client work lives at Soulful Tech.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="/assets/styles.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Adam McClarin",
+  "jobTitle": "Builder, Writer, Reiki Practitioner",
+  "description": "Builder, writer, and Reiki practitioner. Author of four books. Founder of Meraki is Love. CISSP-certified with twenty years of systems engineering.",
+  "worksFor": {"@type": "Organization", "name": "Meraki is Love", "url": "https://merakislove.com"},
+  "url": "https://adammcclarin.com",
+  "sameAs": [
+    "https://merakislove.com",
+    "https://www.linkedin.com/in/adammcclarin/",
+    "https://medium.com/@adammcclarin",
+    "https://adammcclarin1.substack.com"
+  ],
+  "address": {"@type": "PostalAddress", "addressLocality": "Friendswood", "addressRegion": "TX", "addressCountry": "US"},
+  "knowsAbout": ["Soulful Tech", "Reiki", "Karuna Reiki", "AI Engineering", "Cybersecurity", "CISSP", "Writing", "Ghostwriting", "Houston"]
+}
+</script>
+
+<style>
+/* ── HERO ── */
+.hero {
+  padding-top: calc(var(--nav-h) + 140px);
+  padding-bottom: 160px;
+  background: var(--cream);
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: -120px; right: -180px;
+  width: 620px; height: 620px;
+  background: radial-gradient(circle, rgba(184,134,11,0.07) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 90px;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+.hero-content { max-width: 620px; }
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2.8rem, 6.5vw, 5.4rem);
+  font-weight: 900;
+  line-height: 1;
+  letter-spacing: -0.04em;
+  color: var(--ink-warm);
+  margin: 36px 0 36px;
+  font-style: normal;
+}
+.hero h1 em { color: var(--gold); font-style: normal; font-weight: 900; }
+.hero-sub {
+  font-size: 1.18rem;
+  line-height: 1.8;
+  color: var(--muted);
+  margin-bottom: 44px;
+  max-width: 540px;
+  font-weight: 400;
+}
+.hero-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 48px;
+}
+.hero-btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+.hero-portrait {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: var(--cream-2);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-md);
+}
+.hero-portrait img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+}
+
+/* ── COLOPHON (was identity strip, now a quiet name line) ── */
+.colophon {
+  background: var(--cream-2);
+  padding: 28px 40px;
+  border-top: 1px solid var(--border-soft);
+  border-bottom: 1px solid var(--border-soft);
+}
+.colophon-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+.colophon-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+.colophon-items {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex-wrap: wrap;
+}
+.colophon-item {
+  font-family: 'Playfair Display', serif;
+  font-weight: 400;
+  font-size: 0.98rem;
+  color: var(--ink-warm);
+  font-style: normal;
+}
+.colophon-item:not(:last-child)::after {
+  content: '·';
+  margin-left: 32px;
+  color: var(--muted-soft);
+}
+
+/* ── PILLARS ── */
+.pillars {
+  padding: 160px 0 140px;
+  background: var(--cream);
+}
+.pillars-header {
+  max-width: 1100px;
+  margin: 0 auto 96px;
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 80px;
+  align-items: end;
+}
+.pillars-header .eyebrow { margin-bottom: 22px; }
+.pillars-header h2 { margin-bottom: 0; }
+.pillars-header-right p {
+  font-size: 1.02rem;
+  color: var(--muted);
+  line-height: 1.8;
+  padding-bottom: 6px;
+}
+.pillars-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 64px;
+}
+.pillar { padding: 0; }
+.pillar-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: block;
+  padding-top: 18px;
+  border-top: 1px solid var(--gold);
+  margin-bottom: 24px;
+}
+.pillar-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: var(--ink-warm);
+  line-height: 1;
+  margin-bottom: 22px;
+  font-style: normal;
+}
+.pillar-body {
+  font-size: 1rem;
+  line-height: 1.85;
+  color: var(--muted);
+  margin-bottom: 28px;
+}
+
+/* ── BOOKS (shelf, not grid) ── */
+.books-section {
+  padding: 140px 0 160px;
+  background: var(--cream-2);
+}
+.books-header {
+  max-width: 1100px;
+  margin: 0 auto 96px;
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 80px;
+  align-items: end;
+}
+.books-header .eyebrow { margin-bottom: 22px; }
+.books-header h2 { margin-bottom: 0; }
+.books-header-right p {
+  font-size: 1.02rem;
+  line-height: 1.8;
+  color: var(--muted);
+  padding-bottom: 6px;
+}
+.books-grid {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 56px;
+  align-items: start;
+}
+.book {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.35s ease;
+}
+.book:hover { transform: translateY(-6px); }
+.book-cover {
+  aspect-ratio: 2 / 3;
+  background: var(--cream-2);
+  overflow: hidden;
+  margin-bottom: 32px;
+  position: relative;
+  box-shadow: var(--shadow-book);
+  transition: box-shadow 0.35s ease;
+}
+.book:hover .book-cover {
+  box-shadow: 0 30px 60px rgba(31,24,18,0.28);
+}
+.book-cover img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.book.featured .book-cover {
+  box-shadow: 0 28px 60px rgba(31,24,18,0.24);
+}
+.book-flag {
+  position: absolute;
+  top: 16px; left: 16px;
+  background: var(--gold-soft);
+  color: var(--gold-warm);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.55rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  padding: 7px 12px;
+  z-index: 1;
+  border: 1px solid var(--gold);
+}
+.book-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.55rem;
+  font-weight: 700;
+  color: var(--ink-warm);
+  line-height: 1.2;
+  margin-bottom: 14px;
+  font-style: normal;
+}
+.book.featured .book-title { font-size: 1.9rem; }
+.book-desc {
+  font-size: 0.94rem;
+  color: var(--muted);
+  line-height: 1.75;
+  margin-bottom: 22px;
+  flex-grow: 1;
+}
+.book-link {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  border-bottom: 1px solid var(--gold);
+  padding-bottom: 4px;
+  align-self: flex-start;
+  transition: color 0.2s, border-color 0.2s;
+}
+.book:hover .book-link { color: var(--gold-warm); border-color: var(--gold-warm); }
+
+.books-footer {
+  max-width: 1100px;
+  margin: 80px auto 0;
+  padding: 0 40px;
+  text-align: center;
+}
+
+/* ── WRITING (reading room) ── */
+.writing {
+  padding: 160px 0;
+  background: var(--paper);
+  border-top: 1px solid var(--border-soft);
+}
+.writing-header {
+  max-width: 1100px;
+  margin: 0 auto 80px;
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: 1.3fr 1fr auto;
+  gap: 60px;
+  align-items: end;
+}
+.writing-header .eyebrow { margin-bottom: 22px; }
+.writing-header h2 { margin-bottom: 0; }
+.writing-header-right p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--muted);
+  padding-bottom: 6px;
+}
+.writing-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 36px;
+}
+.medium-card {
+  background: var(--cream);
+  padding: 44px 40px;
+  border: 1px solid transparent;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+.medium-card:hover {
+  border-color: var(--gold);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+.medium-card-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 18px;
+}
+.medium-card-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.65rem;
+  font-weight: 700;
+  color: var(--ink-warm);
+  line-height: 1.22;
+  margin-bottom: 18px;
+  font-style: normal;
+}
+.medium-card-desc {
+  font-size: 0.94rem;
+  line-height: 1.8;
+  color: var(--muted);
+  margin-bottom: 24px;
+  flex-grow: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.medium-card-meta {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.6rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted-soft);
+}
+.medium-card-meta span:not(:last-child)::after {
+  content: '·';
+  margin: 0 10px;
+  color: var(--muted-soft);
+}
+.medium-loading {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 60px 20px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+.writing-footer {
+  max-width: 1100px;
+  margin: 60px auto 0;
+  padding: 0 40px;
+  text-align: center;
+}
+
+/* ── SERVICES (invitations, not tiles) ── */
+.services {
+  padding: 160px 0;
+  background: var(--cream);
+}
+.services-header {
+  max-width: 1100px;
+  margin: 0 auto 96px;
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 80px;
+  align-items: end;
+}
+.services-header .eyebrow { margin-bottom: 22px; }
+.services-header h2 { margin-bottom: 0; }
+.services-header-right p {
+  font-size: 1.02rem;
+  line-height: 1.8;
+  color: var(--muted);
+  padding-bottom: 6px;
+}
+.services-grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+}
+.service {
+  display: flex;
+  flex-direction: column;
+}
+.service-eyebrow {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--gold);
+  display: block;
+  padding-top: 18px;
+  border-top: 1px solid var(--gold);
+  margin-bottom: 24px;
+}
+.service-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.1rem;
+  font-weight: 700;
+  color: var(--ink-warm);
+  line-height: 1.05;
+  margin-bottom: 24px;
+  font-style: normal;
+}
+.service-prose {
+  font-size: 1rem;
+  line-height: 1.85;
+  color: var(--muted);
+  margin-bottom: 22px;
+}
+.service-offers {
+  margin: 6px 0 36px;
+  border-left: 1px solid var(--gold);
+  padding-left: 20px;
+}
+.service-offer {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.02rem;
+  font-weight: 400;
+  color: var(--ink-warm);
+  line-height: 1.5;
+  padding: 6px 0;
+  font-style: normal;
+}
+
+/* ── MERAKI CONNECTOR BAND ── */
+.meraki-band {
+  background: var(--warm-dark);
+  padding: 120px 40px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.meraki-band::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 28% 32%, rgba(184,134,11,0.16) 0%, transparent 60%),
+    radial-gradient(circle at 72% 68%, rgba(184,134,11,0.08) 0%, transparent 55%);
+}
+.meraki-band-inner {
+  max-width: 760px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+.meraki-band .eyebrow { color: var(--gold); margin-bottom: 26px; }
+.meraki-band h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  font-weight: 700;
+  color: var(--cream);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 22px;
+  font-style: normal;
+}
+.meraki-band h2 em { color: var(--gold); font-style: normal; font-weight: 700; }
+.meraki-band p {
+  font-size: 1.05rem;
+  color: rgba(253,252,247,0.78);
+  line-height: 1.85;
+  margin-bottom: 40px;
+  max-width: 580px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ── PRACTICE (the quietest section) ── */
+.practice {
+  padding: 200px 0;
+  background: var(--gold-soft);
+  text-align: center;
+}
+.practice-inner {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+.practice .eyebrow { margin-bottom: 32px; }
+.practice-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4.2vw, 2.8rem);
+  font-weight: 400;
+  color: var(--ink-warm);
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  margin-bottom: 40px;
+  font-style: normal;
+}
+.practice-title em { color: var(--gold-warm); font-style: normal; font-weight: 700; }
+.practice-prose {
+  font-size: 1.08rem;
+  line-height: 1.95;
+  color: var(--ink-warm);
+  margin-bottom: 26px;
+}
+.practice-creds {
+  margin: 56px auto 56px;
+  padding: 32px 0;
+  border-top: 1px solid rgba(184,134,11,0.3);
+  border-bottom: 1px solid rgba(184,134,11,0.3);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold-warm);
+  line-height: 2.2;
+}
+.practice-cred-sep { color: var(--muted-soft); margin: 0 10px; }
+.practice-actions {
+  display: flex;
+  gap: 40px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ── CONTACT ── */
+.contact {
+  padding: 180px 0;
+  background: var(--cream);
+  text-align: center;
+}
+.contact-inner {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 0 40px;
+}
+.contact .eyebrow { margin-bottom: 28px; }
+.contact h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(2rem, 4.5vw, 3rem);
+  font-weight: 700;
+  color: var(--ink-warm);
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  margin-bottom: 26px;
+  font-style: normal;
+}
+.contact h2 em { color: var(--gold); font-style: normal; font-weight: 700; }
+.contact p {
+  font-size: 1.05rem;
+  color: var(--muted);
+  line-height: 1.85;
+  margin-bottom: 44px;
+}
+.contact-email {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-weight: 400;
+  color: var(--ink-warm);
+  text-decoration: none;
+  display: block;
+  margin-bottom: 48px;
+  transition: color 0.2s;
+  font-style: normal;
+}
+.contact-email:hover { color: var(--gold); }
+.contact-btns {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* ── HOME RESPONSIVE ── */
+@media (max-width: 1100px) {
+  .hero-inner { grid-template-columns: 1fr; gap: 60px; }
+  .hero-portrait { max-width: 460px; margin: 0 auto; width: 100%; }
+  .pillars-header,
+  .books-header,
+  .services-header,
+  .writing-header { grid-template-columns: 1fr; gap: 32px; }
+  .pillars-grid,
+  .books-grid,
+  .services-grid { grid-template-columns: 1fr; gap: 60px; }
+  .writing-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 720px) {
+  .hero { padding-top: calc(var(--nav-h) + 80px); padding-bottom: 100px; }
+  .hero-inner { padding: 0 24px; gap: 48px; }
+  .colophon { padding: 22px 24px; }
+  .colophon-items { gap: 20px; }
+  .colophon-item:not(:last-child)::after { margin-left: 20px; }
+  .pillars { padding: 100px 0; }
+  .pillars-header,
+  .pillars-grid { padding: 0 24px; }
+  .pillars-grid { gap: 48px; }
+  .books-section { padding: 100px 0; }
+  .books-header,
+  .books-grid,
+  .books-footer { padding: 0 24px; }
+  .books-grid { gap: 48px; }
+  .writing { padding: 100px 0; }
+  .writing-header,
+  .writing-grid,
+  .writing-footer { padding: 0 24px; }
+  .medium-card { padding: 36px 28px; }
+  .services { padding: 100px 0; }
+  .services-header,
+  .services-grid { padding: 0 24px; }
+  .meraki-band { padding: 90px 24px; }
+  .practice { padding: 120px 0; }
+  .practice-inner { padding: 0 24px; }
+  .practice-creds { font-size: 0.62rem; line-height: 2.4; }
+  .contact { padding: 110px 0; }
+  .contact-inner { padding: 0 24px; }
+}
+
+/* Hero entrance animations */
+.hero .eyebrow { animation: fadeUp 0.85s cubic-bezier(0.22,1,0.36,1) 0.05s both; }
+.hero h1 { animation: fadeUp 0.85s cubic-bezier(0.22,1,0.36,1) 0.15s both; }
+.hero-sub { animation: fadeUp 0.85s cubic-bezier(0.22,1,0.36,1) 0.25s both; }
+.hero-badges { animation: fadeUp 0.85s cubic-bezier(0.22,1,0.36,1) 0.35s both; }
+.hero-btns { animation: fadeUp 0.85s cubic-bezier(0.22,1,0.36,1) 0.45s both; }
+.hero-portrait { animation: fadeUp 0.95s cubic-bezier(0.22,1,0.36,1) 0.3s both; }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="site-nav">
+  <div class="nav-inner">
+    <a href="/" class="nav-brand">Adam. McClarin<span>.</span></a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+    <div class="nav-links">
+      <a href="/#books">Books</a>
+      <a href="/articles">Writing</a>
+      <a href="/gallery">Gallery</a>
+      <a href="https://merakislove.com" target="_blank" rel="noopener" class="nav-ext">Soulful Tech</a>
+      <a href="https://calendly.com/hello-merakislove/new-meeting" target="_blank" rel="noopener" class="nav-cta">Book a Briefing</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="eyebrow has-rule">Soulful Tech · Builder · Writer · Practitioner</div>
+      <h1>Builder. Writer. <em>Reiki Practitioner.</em></h1>
+      <p class="hero-sub">I build software that respects the people who use it, write books about leadership, faith, and the cost of becoming, and practice Reiki because the work and the spirit are not separate things.</p>
+      <div class="hero-badges">
+        <span class="badge gold">Author of Four</span>
+        <span class="badge warm">Founder, Meraki is Love</span>
+        <span class="badge warm">CISSP Certified</span>
+        <span class="badge warm">20 Yrs Engineering</span>
+      </div>
+      <div class="hero-btns">
+        <a href="#books" class="btn btn-primary">Read the Books</a>
+        <a href="https://merakislove.com" target="_blank" rel="noopener" class="btn btn-gold-outline">Visit Soulful Tech ↗</a>
+      </div>
+    </div>
+    <div class="hero-portrait">
+      <img src="/images/adam-mcclarin-headshot.png" alt="Adam McClarin">
+    </div>
+  </div>
+</section>
+
+<!-- COLOPHON (quiet name line, replaces the dark identity strip) -->
+<section class="colophon">
+  <div class="colophon-inner">
+    <span class="colophon-label">The Work, Named</span>
+    <div class="colophon-items">
+      <span class="colophon-item">Builder</span>
+      <span class="colophon-item">Author</span>
+      <span class="colophon-item">AI Engineer</span>
+      <span class="colophon-item">Reiki Practitioner</span>
+      <span class="colophon-item">Speaker</span>
+    </div>
+  </div>
+</section>
+
+<!-- THREE PILLARS -->
+<section class="pillars">
+  <div class="pillars-header">
+    <div>
+      <div class="eyebrow has-rule">Three Pillars</div>
+      <h2 class="section-title">Build. Write. <em>Practice.</em></h2>
+    </div>
+    <div class="pillars-header-right">
+      <p>Three streams of work, kept honest by the same standard. Each one is its own discipline, and each one feeds the others.</p>
+    </div>
+  </div>
+  <div class="pillars-grid">
+    <div class="pillar">
+      <span class="pillar-num">01 · Build</span>
+      <div class="pillar-name">Build</div>
+      <p class="pillar-body">Websites, custom apps, and private AI infrastructure for service businesses and founders. Built with intention, secured by default. The studio is Soulful Tech.</p>
+      <a href="https://merakislove.com" target="_blank" rel="noopener" class="qlink">Visit the studio ↗</a>
+    </div>
+    <div class="pillar">
+      <span class="pillar-num">02 · Write</span>
+      <div class="pillar-name">Write</div>
+      <p class="pillar-body">Four books in print. Weekly dispatches on Medium and Substack. Writing is how I think out loud, then sharpen it into something useful.</p>
+      <a href="/articles" class="qlink">Read the writing →</a>
+    </div>
+    <div class="pillar">
+      <span class="pillar-num">03 · Practice</span>
+      <div class="pillar-name">Practice</div>
+      <p class="pillar-body">Reiki Master and Karuna Reiki practitioner. One-on-one sessions and distance work for people moving through transition. Presence first, technique second.</p>
+      <a href="#practice" class="qlink">About the practice →</a>
+    </div>
+  </div>
+</section>
+
+<!-- BOOKS -->
+<section class="books-section" id="books">
+  <div class="books-header">
+    <div>
+      <div class="eyebrow has-rule">The Books</div>
+      <h2 class="section-title">A shelf, <em>not a catalog.</em></h2>
+    </div>
+    <div class="books-header-right">
+      <p>Three books in print. A fourth in progress. Each one written for a different reader, a different moment, a different question.</p>
+    </div>
+  </div>
+  <div class="books-grid">
+    <a href="https://www.amazon.com/stores/Adam-Mcclarin/author/B0G2L31YB8" target="_blank" rel="noopener" class="book featured">
+      <div class="book-cover">
+        <span class="book-flag">Featured</span>
+        <img src="/images/weight-of-the-mantle.png" alt="The Weight of the Mantle by Adam McClarin">
+      </div>
+      <h3 class="book-title">The Weight of the Mantle</h3>
+      <p class="book-desc">A Leader's Journey from Control to Purpose. The unguarded account of twenty years across five corporate environments and what it costs to be genuinely good at leading people inside systems that were never designed for the full flourishing of the people inside them.</p>
+      <span class="book-link">Read on Amazon →</span>
+    </a>
+    <a href="https://www.amazon.com/AI-Prompt-Playbook-Mastering-Essential/dp/B0FK35P8TS" target="_blank" rel="noopener" class="book">
+      <div class="book-cover">
+        <img src="/images/ai-prompt-playbook.jpg" alt="The AI Prompt Playbook by Adam McClarin">
+      </div>
+      <h3 class="book-title">The AI Prompt Playbook</h3>
+      <p class="book-desc">Mastering Gemini, Grok, and ChatGPT. A guide to crafting prompts that actually work. Beginner-to-advanced examples, ethical AI use, and the techniques behind the writing tools millions are now using daily.</p>
+      <span class="book-link">Read on Amazon →</span>
+    </a>
+    <a href="https://www.amazon.com/stores/Adam-Mcclarin/author/B0G2L31YB8" target="_blank" rel="noopener" class="book">
+      <div class="book-cover">
+        <img src="/images/daily-routine-reset.jpeg" alt="Daily Routine Reset by Adam McClarin">
+      </div>
+      <h3 class="book-title">Daily Routine Reset</h3>
+      <p class="book-desc">A customizable template for peaceful mornings and evenings. Built for parents juggling the laundry, the meals, the meltdowns, and the quiet pockets of self. Flexible framework, not rigid schedule.</p>
+      <span class="book-link">Read on Amazon →</span>
+    </a>
+  </div>
+  <div class="books-footer">
+    <a href="https://www.amazon.com/stores/Adam-Mcclarin/author/B0G2L31YB8" target="_blank" rel="noopener" class="qlink">View Full Author Page on Amazon ↗</a>
+  </div>
+</section>
+
+<!-- WRITING (live Medium feed) -->
+<section class="writing">
+  <div class="writing-header">
+    <div>
+      <div class="eyebrow has-rule">Recent Writing</div>
+      <h2 class="section-title">Words from <em>the desk.</em></h2>
+    </div>
+    <div class="writing-header-right">
+      <p>Medium dispatches and Substack pieces on leadership, building with intention, and the work that lives behind the work. New posts publish as they finish.</p>
+    </div>
+    <a href="/articles" class="qlink">All Writing →</a>
+  </div>
+  <div class="writing-grid" id="medium-grid">
+    <div class="medium-loading">Loading recent posts...</div>
+  </div>
+</section>
+
+<!-- SERVICES (Speaking + Ghostwriting) -->
+<section class="services">
+  <div class="services-header">
+    <div>
+      <div class="eyebrow has-rule">Beyond the Studio</div>
+      <h2 class="section-title">Speaking and <em>ghostwriting.</em></h2>
+    </div>
+    <div class="services-header-right">
+      <p>Two services that run alongside the studio. Built around the writing, the books, and twenty years on the technical side.</p>
+    </div>
+  </div>
+  <div class="services-grid">
+    <div class="service">
+      <span class="service-eyebrow">Speaking</span>
+      <h3 class="service-name">Talks and panels.</h3>
+      <p class="service-prose">I speak about building with intention and the work that lives behind the work. Keynotes, panels, fireside conversations. The room sets the tone, the talk meets it.</p>
+      <div class="service-offers">
+        <div class="service-offer">The Soulful Tech philosophy and building with intention.</div>
+        <div class="service-offer">Cybersecurity for small business owners.</div>
+        <div class="service-offer">AI for service businesses without a technical team.</div>
+        <div class="service-offer">The four books, and what each one is for.</div>
+      </div>
+      <a href="mailto:hello@merakislove.com?subject=Speaking%20inquiry" class="qlink">Inquire about speaking →</a>
+    </div>
+    <div class="service">
+      <span class="service-eyebrow">Ghostwriting</span>
+      <h3 class="service-name">Books, essays, brand voice.</h3>
+      <p class="service-prose">I ghostwrite for founders and leaders who have the experience but not the time. The voice stays yours. The work gets finished. The reader never has to wonder who is on the page.</p>
+      <div class="service-offers">
+        <div class="service-offer">Full-length book ghostwriting.</div>
+        <div class="service-offer">Essay and newsletter series.</div>
+        <div class="service-offer">Thought leadership for LinkedIn and Medium.</div>
+        <div class="service-offer">Brand voice development.</div>
+      </div>
+      <a href="mailto:hello@merakislove.com?subject=Ghostwriting%20inquiry" class="qlink">Inquire about ghostwriting →</a>
+    </div>
+  </div>
+</section>
+
+<!-- MERAKI CONNECTOR BAND -->
+<section class="meraki-band">
+  <div class="meraki-band-inner">
+    <div class="eyebrow has-rule">The Studio</div>
+    <h2>This is the writer. The builder lives at <em>Soulful Tech.</em></h2>
+    <p>Soulful Tech is where the client work happens. Websites, custom apps, and private AI infrastructure for founders and service businesses.</p>
+    <a href="https://merakislove.com" target="_blank" rel="noopener" class="btn btn-gold-outline">Visit Soulful Tech ↗</a>
+  </div>
+</section>
+
+<!-- PRACTICE (Reiki) -->
+<section class="practice" id="practice">
+  <div class="practice-inner">
+    <div class="eyebrow has-rule">The Practice</div>
+    <h2 class="practice-title">Presence first. <em>Technique second.</em></h2>
+    <p class="practice-prose">The practice runs on a simple premise. Presence is the work. Technique is what carries it.</p>
+    <p class="practice-prose">One-on-one sessions in person. Distance sessions for clients anywhere. For people moving through transition, grief, recalibration, or the quiet kind of recovery that does not have a name yet.</p>
+    <div class="practice-creds">
+      Reiki Master · Usui Tradition <span class="practice-cred-sep">·</span> Karuna Reiki Practitioner <span class="practice-cred-sep">·</span> Sessions in Texas and Remote
+    </div>
+    <div class="practice-actions">
+      <a href="https://calendly.com/hello-merakislove/new-meeting" target="_blank" rel="noopener" class="qlink">Book a session →</a>
+      <a href="mailto:hello@merakislove.com?subject=Reiki%20inquiry" class="qlink">Ask a question →</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <div class="eyebrow has-rule">Get in Touch</div>
+    <h2>Let's <em>talk.</em></h2>
+    <p>For speaking, ghostwriting, Reiki, or to ask a question that does not fit a form.</p>
+    <a href="mailto:hello@merakislove.com" class="contact-email">hello@merakislove.com</a>
+    <div class="contact-btns">
+      <a href="https://calendly.com/hello-merakislove/new-meeting" target="_blank" rel="noopener" class="btn btn-primary">Book a call</a>
+      <a href="https://merakislove.com" target="_blank" rel="noopener" class="btn btn-outline">Visit the studio ↗</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-brand">Adam. McClarin<span>.</span></div>
+  <div class="footer-tagline">Builder · Writer · Reiki Practitioner · Texas · © 2026</div>
+  <a href="mailto:hello@merakislove.com" class="footer-email">hello@merakislove.com</a>
+  <div class="footer-links">
+    <a href="https://merakislove.com" target="_blank" rel="noopener">Soulful Tech</a>
+    <a href="https://www.linkedin.com/in/adammcclarin/" target="_blank" rel="noopener">LinkedIn</a>
+    <a href="https://medium.com/@adammcclarin" target="_blank" rel="noopener">Medium</a>
+    <a href="https://adammcclarin1.substack.com" target="_blank" rel="noopener">Substack</a>
+    <a href="/gallery">Gallery</a>
+    <a href="/articles">Writing</a>
+  </div>
+  <div class="footer-copy">CISSP Certified · Reiki Master · Karuna Reiki Practitioner · 20 Years Systems Engineering</div>
+</footer>
+
+<!-- Mobile nav JS -->
+<script>
+(function() {
+  const toggle = document.querySelector('.nav-toggle');
+  const links = document.querySelector('.nav-links');
+  if (toggle && links) {
+    toggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const open = links.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  }
+})();
+</script>
+
+<!-- Medium RSS feed via rss2json -->
+<script>
+(function() {
+  const grid = document.getElementById('medium-grid');
+  if (!grid) return;
+  const feed = 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent('https://medium.com/feed/@adammcclarin');
+
+  function stripHtml(html) {
+    const tmp = document.createElement('div');
+    tmp.innerHTML = html;
+    return (tmp.textContent || tmp.innerText || '').trim();
+  }
+  function formatDate(d) {
+    try {
+      return new Date(d).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
+    } catch (e) { return ''; }
+  }
+  function readTime(text) {
+    const words = (text || '').split(/\s+/).length;
+    return Math.max(1, Math.round(words / 220)) + ' min read';
+  }
+
+  fetch(feed)
+    .then(r => r.json())
+    .then(data => {
+      if (!data || data.status !== 'ok' || !Array.isArray(data.items)) {
+        grid.innerHTML = '<div class="medium-loading">Could not load posts. Read everything on Medium.</div>';
+        return;
+      }
+      const items = data.items.slice(0, 4);
+      grid.innerHTML = items.map(item => {
+        const desc = stripHtml(item.description).slice(0, 220);
+        const date = formatDate(item.pubDate);
+        return '<a href="' + item.link + '" target="_blank" rel="noopener" class="medium-card">'
+          + '<div class="medium-card-label">Medium</div>'
+          + '<h3 class="medium-card-title">' + item.title + '</h3>'
+          + '<p class="medium-card-desc">' + desc + '</p>'
+          + '<div class="medium-card-meta"><span>' + date + '</span><span>' + readTime(stripHtml(item.description)) + '</span></div>'
+          + '</a>';
+      }).join('');
+    })
+    .catch(() => {
+      grid.innerHTML = '<div class="medium-loading">Could not load posts. Read everything on Medium.</div>';
+    });
+})();
+</script>
+
+</body>
+</html>
