@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Adam McClarin | Builder. Writer. Reiki Practitioner.</title>
 <meta name="description" content="Adam McClarin. Builder, writer, and Reiki practitioner. Author of four books. Founder of Meraki is Love. CISSP-certified, with twenty years of systems engineering.">
-<meta name="keywords" content="Adam McClarin, soulful tech, Meraki is Love, Reiki, Karuna Reiki, ghostwriter, speaker, CISSP, author, The Weight of the Mantle, AI Prompt Playbook, Daily Routine Reset">
+<meta name="keywords" content="Adam McClarin, soulful tech, Meraki is Love, Reiki, Karuna Reiki, ghostwriter, CISSP, author, The Weight of the Mantle, AI Prompt Playbook, Daily Routine Reset">
 <meta property="og:title" content="Adam McClarin | Builder. Writer. Reiki Practitioner.">
 <meta property="og:description" content="The personal site of Adam McClarin. Four books, a private Reiki practice, and a studio for client work at Soulful Tech.">
 <meta property="og:url" content="https://adammcclarin.com">
@@ -585,100 +585,85 @@
   text-align: center;
 }
 
-/* ── SERVICES (invitations, not tiles) ── */
+/* ── COLLABORATIVE WORK (Ghostwriting full-width editorial feature) ── */
 .services {
   padding: 160px 0;
   background: var(--cream);
 }
-.services-header {
-  max-width: 1100px;
-  margin: 0 auto 96px;
-  padding: 0 40px;
-  display: grid;
-  grid-template-columns: 1.3fr 1fr;
-  gap: 80px;
-  align-items: end;
-}
-.services-header .eyebrow { margin-bottom: 22px; }
-.services-header h2 { margin-bottom: 0; }
-.services-header-right p {
-  font-size: 1.02rem;
-  line-height: 1.8;
-  color: var(--muted);
-  padding-bottom: 6px;
-}
-.services-grid {
-  max-width: 1100px;
+.services-feature {
+  max-width: 1140px;
   margin: 0 auto;
   padding: 0 40px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 64px;
 }
-.service {
-  display: flex;
-  flex-direction: column;
+.services-feature-card {
+  background: var(--paper);
+  border: 1px solid var(--border);
+  border-top: 2px solid var(--gold);
+  padding: 64px 64px;
 }
-.service-eyebrow {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.62rem;
-  letter-spacing: 0.28em;
-  text-transform: uppercase;
-  color: var(--gold);
-  display: block;
-  padding-top: 18px;
-  border-top: 1px solid var(--gold);
-  margin-bottom: 24px;
+.services-feature-card .eyebrow {
+  margin-bottom: 22px;
 }
-.service-name {
+.services-headline {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(1.65rem, 3.2vw, 2.1rem);
+  font-size: clamp(2rem, 4.4vw, 3.4rem);
   font-weight: 700;
   color: var(--ink-warm);
   line-height: 1.08;
-  margin-bottom: 24px;
+  letter-spacing: -0.025em;
+  margin-bottom: 14px;
   font-style: normal;
   text-wrap: balance;
 }
-.service-prose {
-  font-size: 1rem;
+.services-subhead {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.15rem, 2vw, 1.4rem);
+  font-weight: 400;
+  color: var(--gold-warm);
+  line-height: 1.45;
+  margin-bottom: 28px;
+}
+.services-prose {
+  font-size: 1.06rem;
   line-height: 1.85;
   color: var(--muted);
-  margin-bottom: 22px;
+  max-width: 780px;
+  margin-bottom: 36px;
 }
-.service-offers {
-  margin: 6px 0 36px;
-  border-left: 1px solid var(--gold);
-  padding-left: 20px;
-}
-.service-offer {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.02rem;
-  font-weight: 400;
+.services-capabilities {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
   color: var(--ink-warm);
-  line-height: 1.5;
-  padding: 6px 0;
-  font-style: normal;
+  padding: 20px 0;
+  margin-bottom: 36px;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  line-height: 2;
 }
 
-/* ── MERAKI CONNECTOR BAND ── */
+/* ── THE STUDIO (Meraki is Love connector band, warm cream editorial) ── */
 .meraki-band {
-  background: var(--warm-dark);
-  padding: 120px 40px;
+  background: var(--cream-2);
+  padding: 140px 40px;
   text-align: center;
   position: relative;
   overflow: hidden;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
 }
 .meraki-band::before {
   content: '';
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(circle at 28% 32%, rgba(184,134,11,0.16) 0%, transparent 60%),
-    radial-gradient(circle at 72% 68%, rgba(184,134,11,0.08) 0%, transparent 55%);
+    radial-gradient(circle at 28% 32%, rgba(184,134,11,0.06) 0%, transparent 60%),
+    radial-gradient(circle at 72% 68%, rgba(184,134,11,0.04) 0%, transparent 55%);
+  pointer-events: none;
 }
 .meraki-band-inner {
-  max-width: 760px;
+  max-width: 820px;
   margin: 0 auto;
   position: relative;
   z-index: 1;
@@ -686,24 +671,44 @@
 .meraki-band .eyebrow { color: var(--gold); margin-bottom: 26px; }
 .meraki-band h2 {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(1.85rem, 4.5vw, 3rem);
+  font-size: clamp(1.95rem, 4.5vw, 3.2rem);
   font-weight: 700;
-  color: var(--cream);
-  line-height: 1.15;
-  letter-spacing: -0.02em;
-  margin-bottom: 22px;
+  color: var(--ink-warm);
+  line-height: 1.12;
+  letter-spacing: -0.025em;
+  margin-bottom: 26px;
   font-style: normal;
   text-wrap: balance;
 }
 .meraki-band h2 em { color: var(--gold); font-style: normal; font-weight: 700; }
 .meraki-band p {
-  font-size: 1.05rem;
-  color: rgba(253,252,247,0.78);
+  font-size: 1.06rem;
+  color: var(--muted);
   line-height: 1.85;
-  margin-bottom: 40px;
-  max-width: 580px;
+  margin-bottom: 36px;
+  max-width: 700px;
   margin-left: auto;
   margin-right: auto;
+}
+.meraki-creds {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.64rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--gold-warm);
+  padding: 18px 0;
+  margin: 0 auto 40px;
+  max-width: 720px;
+  border-top: 1px solid var(--border-strong);
+  border-bottom: 1px solid var(--border-strong);
+  line-height: 2;
+}
+.meraki-actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 28px;
+  flex-wrap: wrap;
 }
 
 /* ── PRACTICE (the quietest section) ── */
@@ -812,11 +817,9 @@
   .hero-portrait { max-width: 460px; margin: 0 auto; width: 100%; }
   .pillars-header,
   .books-header,
-  .services-header,
   .writing-header { grid-template-columns: 1fr; gap: 32px; }
   .pillars-grid,
-  .books-grid,
-  .services-grid { grid-template-columns: 1fr; gap: 56px; }
+  .books-grid { grid-template-columns: 1fr; gap: 56px; }
   .writing-grid { grid-template-columns: 1fr; }
   .writing-grid .medium-card:first-child { grid-row: auto; }
 }
@@ -863,9 +866,9 @@
   .medium-card,
   .writing-grid .medium-card:first-child { padding: 34px 26px; }
   .services { padding: 100px 0; }
-  .services-header,
-  .services-grid { padding: 0 24px; }
-  .meraki-band { padding: 90px 24px; }
+  .services-feature { padding: 0 24px; }
+  .services-feature-card { padding: 40px 28px; }
+  .meraki-band { padding: 100px 24px; }
   .practice { padding: 120px 0; }
   .practice-inner { padding: 0 24px; }
   .practice-creds { font-size: 0.62rem; line-height: 2.4; }
@@ -898,8 +901,8 @@
       <a href="/#books">Books</a>
       <a href="/articles">Writing</a>
       <a href="/gallery">Gallery</a>
-      <a href="https://merakislove.com" target="_blank" rel="noopener" class="nav-ext">Soulful Tech</a>
-      <a href="https://calendly.com/hello-merakislove/new-meeting" target="_blank" rel="noopener" class="nav-cta">Book a Briefing</a>
+      <a href="https://merakislove.com" target="_blank" rel="noopener noreferrer" class="nav-ext">Soulful Tech</a>
+      <a href="https://calendly.com/hello-merakislove/new-meeting" target="_blank" rel="noopener noreferrer" class="nav-cta">Book a Briefing</a>
     </div>
   </div>
 </nav>
@@ -922,7 +925,7 @@
       </div>
       <div class="hero-btns">
         <a href="#books" class="btn btn-primary">Read the Books</a>
-        <a href="https://merakislove.com" target="_blank" rel="noopener" class="btn btn-gold-outline">Visit Soulful Tech ↗</a>
+        <a href="https://merakislove.com" target="_blank" rel="noopener noreferrer" class="btn btn-gold-outline">Visit Soulful Tech ↗</a>
       </div>
     </div>
     <div class="hero-portrait">
@@ -940,7 +943,6 @@
       <span class="colophon-item">Author</span>
       <span class="colophon-item">AI Engineer</span>
       <span class="colophon-item">Reiki Practitioner</span>
-      <span class="colophon-item">Speaker</span>
     </div>
   </div>
 </section>
@@ -959,12 +961,12 @@
   <div class="pillars-grid">
     <div class="pillar pillar-lead">
       <div>
-        <span class="pillar-rubric">The Studio · Soulful Tech</span>
-        <h3 class="pillar-name">Build</h3>
-        <p class="pillar-body">Websites, custom applications, and private AI infrastructure for service businesses and founders. Every system is scoped, written, and secured firsthand by someone who has spent two decades in software and cybersecurity.</p>
+        <span class="pillar-rubric">01 · Build</span>
+        <h3 class="pillar-name">Systems &amp; Private AI</h3>
+        <p class="pillar-body">Private, secure AI assistants, custom web applications, and security architecture for firms and service businesses that cannot afford to rent client data to public chatbots. CISSP-engineered and built to own.</p>
         <div class="pillar-notes">Custom Web · Document-Trained AI · Canopy Guard Security · Full-Stack Architecture</div>
       </div>
-      <a href="https://merakislove.com" target="_blank" rel="noopener" class="qlink">Visit the studio ↗</a>
+      <a href="https://merakislove.com" target="_blank" rel="noopener noreferrer" class="qlink">Explore Client Work at merakislove.com ↗</a>
     </div>
     <div class="pillar-companion">
       <div class="pillar">
@@ -1090,52 +1092,31 @@
   </div>
 </section>
 
-<!-- SERVICES (Speaking + Ghostwriting) -->
+<!-- COLLABORATIVE WORK (Ghostwriting) -->
 <section class="services">
-  <div class="services-header">
-    <div>
-      <div class="eyebrow has-rule">Beyond the Studio</div>
-      <h2 class="section-title">Speaking and <em>ghostwriting.</em></h2>
-    </div>
-    <div class="services-header-right">
-      <p>Two services that run alongside the studio. Built around the writing, the books, and twenty years on the technical side.</p>
-    </div>
-  </div>
-  <div class="services-grid">
-    <div class="service">
-      <span class="service-eyebrow">Speaking</span>
-      <h3 class="service-name">Talks and panels.</h3>
-      <p class="service-prose">I speak about building with intention and the work that lives behind the work. Keynotes, panels, fireside conversations. The room sets the tone, the talk meets it.</p>
-      <div class="service-offers">
-        <div class="service-offer">The Soulful Tech philosophy and building with intention.</div>
-        <div class="service-offer">Cybersecurity for small business owners.</div>
-        <div class="service-offer">AI for service businesses without a technical team.</div>
-        <div class="service-offer">The four books, and what each one is for.</div>
-      </div>
-      <a href="mailto:hello@merakislove.com?subject=Speaking%20inquiry" class="qlink">Inquire about speaking →</a>
-    </div>
-    <div class="service">
-      <span class="service-eyebrow">Ghostwriting</span>
-      <h3 class="service-name">Books, essays, brand voice.</h3>
-      <p class="service-prose">I ghostwrite for founders and leaders who have the experience but not the time. The voice stays yours. The work gets finished. The reader never has to wonder who is on the page.</p>
-      <div class="service-offers">
-        <div class="service-offer">Full-length book ghostwriting.</div>
-        <div class="service-offer">Essay and newsletter series.</div>
-        <div class="service-offer">Thought leadership for LinkedIn and Medium.</div>
-        <div class="service-offer">Brand voice development.</div>
-      </div>
-      <a href="mailto:hello@merakislove.com?subject=Ghostwriting%20inquiry" class="qlink">Inquire about ghostwriting →</a>
+  <div class="services-feature">
+    <div class="services-feature-card">
+      <div class="eyebrow has-rule">COLLABORATIVE WORK · GHOSTWRITING</div>
+      <h2 class="services-headline">Ghostwriting for Founders &amp; Leaders.</h2>
+      <div class="services-subhead">Books, long-form essays, and executive voice development.</div>
+      <p class="services-prose">I ghostwrite for founders and leaders who have the depth of experience but not the bandwidth to sit at a keyboard. The voice stays entirely yours. The book gets finished. The reader never has to wonder who is on the page.</p>
+      <div class="services-capabilities">Full-Length Books · Essay &amp; Newsletter Series · Executive Thought Leadership · Brand Voice &amp; Manifesto Architecture</div>
+      <a href="mailto:hello@merakislove.com?subject=Ghostwriting%20inquiry" class="qlink">Inquire About Ghostwriting →</a>
     </div>
   </div>
 </section>
 
-<!-- MERAKI CONNECTOR BAND -->
+<!-- THE STUDIO (Meraki is Love) -->
 <section class="meraki-band">
   <div class="meraki-band-inner">
-    <div class="eyebrow has-rule">The Studio</div>
-    <h2>This is the writer. The builder lives at <em>Soulful Tech.</em></h2>
-    <p>Soulful Tech is where the client work happens. Websites, custom apps, and private AI infrastructure for founders and service businesses.</p>
-    <a href="https://merakislove.com" target="_blank" rel="noopener" class="btn btn-gold-outline">Visit Soulful Tech ↗</a>
+    <div class="eyebrow has-rule">THE STUDIO · MERAKI IS LOVE</div>
+    <h2>The writer lives here. The engineering ships at <em>Meraki is Love.</em></h2>
+    <p>Soulful Tech™ is the operating philosophy; Meraki is Love is where production systems are built. From clean $500 starter sites for local businesses to CISSP security posture audits and custom private AI infrastructure (Meraki BIP), every project is engineered by the person who answers the call. No rented data, no outsourced code, no corporate decks.</p>
+    <div class="meraki-creds">USMC Veteran (OEF) · CISSP Certified · 20 Years Systems Engineering · Azure AI Engineer</div>
+    <div class="meraki-actions">
+      <a href="https://merakislove.com" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Visit merakislove.com ↗</a>
+      <a href="https://calendly.com/hello-merakislove/new-meeting" target="_blank" rel="noopener noreferrer" class="qlink">Book a 20-Minute Call →</a>
+    </div>
   </div>
 </section>
 
@@ -1150,7 +1131,7 @@
       Reiki Master · Usui Tradition <span class="practice-cred-sep">·</span> Karuna Reiki Practitioner <span class="practice-cred-sep">·</span> Sessions in Texas and Remote
     </div>
     <div class="practice-actions">
-      <a href="https://calendly.com/hello-merakislove/new-meeting" target="_blank" rel="noopener" class="qlink">Book a session →</a>
+      <a href="https://calendly.com/hello-merakislove/new-meeting" target="_blank" rel="noopener noreferrer" class="qlink">Book a session →</a>
       <a href="mailto:hello@merakislove.com?subject=Reiki%20inquiry" class="qlink">Ask a question →</a>
     </div>
   </div>
@@ -1161,11 +1142,11 @@
   <div class="contact-inner">
     <div class="eyebrow has-rule">Get in Touch</div>
     <h2>Let's <em>talk.</em></h2>
-    <p>For speaking, ghostwriting, Reiki, or to ask a question that does not fit a form.</p>
+    <p>For ghostwriting, studio inquiries, or a question that does not fit a form.</p>
     <a href="mailto:hello@merakislove.com" class="contact-email">hello@merakislove.com</a>
     <div class="contact-btns">
-      <a href="https://calendly.com/hello-merakislove/new-meeting" target="_blank" rel="noopener" class="btn btn-primary">Book a call</a>
-      <a href="https://merakislove.com" target="_blank" rel="noopener" class="btn btn-outline">Visit the studio ↗</a>
+      <a href="https://calendly.com/hello-merakislove/new-meeting" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Book a call</a>
+      <a href="https://merakislove.com" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Visit the studio ↗</a>
     </div>
   </div>
 </section>
@@ -1176,10 +1157,10 @@
   <div class="footer-tagline">Builder · Writer · Reiki Practitioner · Texas · © 2026</div>
   <a href="mailto:hello@merakislove.com" class="footer-email">hello@merakislove.com</a>
   <div class="footer-links">
-    <a href="https://merakislove.com" target="_blank" rel="noopener">Soulful Tech</a>
-    <a href="https://www.linkedin.com/in/adammcclarin/" target="_blank" rel="noopener">LinkedIn</a>
-    <a href="https://medium.com/@adammcclarin" target="_blank" rel="noopener">Medium</a>
-    <a href="https://adammcclarin1.substack.com" target="_blank" rel="noopener">Substack</a>
+    <a href="https://merakislove.com" target="_blank" rel="noopener noreferrer">Soulful Tech</a>
+    <a href="https://www.linkedin.com/in/adammcclarin/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <a href="https://medium.com/@adammcclarin" target="_blank" rel="noopener noreferrer">Medium</a>
+    <a href="https://adammcclarin1.substack.com" target="_blank" rel="noopener noreferrer">Substack</a>
     <a href="/gallery">Gallery</a>
     <a href="/articles">Writing</a>
   </div>
