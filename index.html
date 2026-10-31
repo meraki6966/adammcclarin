@@ -16,7 +16,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="/assets/styles.css">
 
@@ -71,28 +71,60 @@
 .hero-content { max-width: 620px; }
 .hero h1 {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(2.8rem, 6.5vw, 5.4rem);
+  font-size: clamp(2.15rem, 5.2vw + 0.35rem, 5.2rem);
   font-weight: 900;
-  line-height: 1;
-  letter-spacing: -0.04em;
+  line-height: 1.04;
+  letter-spacing: -0.035em;
   color: var(--ink-warm);
-  margin: 36px 0 36px;
+  margin: 32px 0 32px;
   font-style: normal;
+  text-wrap: balance;
 }
-.hero h1 em { color: var(--gold); font-style: normal; font-weight: 900; }
+.hero h1 em {
+  color: var(--gold);
+  font-style: normal;
+  font-weight: 900;
+  display: inline-block;
+}
 .hero-sub {
-  font-size: 1.18rem;
+  font-size: 1.16rem;
   line-height: 1.8;
   color: var(--muted);
-  margin-bottom: 44px;
+  margin-bottom: 36px;
   max-width: 540px;
   font-weight: 400;
 }
 .hero-badges {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 48px;
+  align-items: center;
+  gap: 12px 18px;
+  margin-bottom: 44px;
+  padding: 16px 0;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.hero-cred {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.64rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+  line-height: 1.5;
+}
+.hero-cred strong {
+  color: var(--ink-warm);
+  font-weight: 500;
+}
+.hero-cred.accent strong {
+  color: var(--gold-warm);
+}
+.hero-cred-sep {
+  width: 1px;
+  height: 13px;
+  background: var(--border-strong);
+  display: inline-block;
+  flex-shrink: 0;
 }
 .hero-btns {
   display: flex;
@@ -156,14 +188,14 @@
   color: var(--muted-soft);
 }
 
-/* ── PILLARS ── */
+/* ── PILLARS (asymmetric editorial spread) ── */
 .pillars {
   padding: 160px 0 140px;
   background: var(--cream);
 }
 .pillars-header {
-  max-width: 1100px;
-  margin: 0 auto 96px;
+  max-width: 1140px;
+  margin: 0 auto 88px;
   padding: 0 40px;
   display: grid;
   grid-template-columns: 1.3fr 1fr;
@@ -179,49 +211,88 @@
   padding-bottom: 6px;
 }
 .pillars-grid {
-  max-width: 1100px;
+  max-width: 1140px;
   margin: 0 auto;
   padding: 0 40px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 64px;
+  grid-template-columns: 1.15fr 1fr;
+  gap: 72px;
+  align-items: stretch;
 }
-.pillar { padding: 0; }
-.pillar-num {
+.pillar {
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+.pillar.pillar-lead {
+  background: var(--paper);
+  border: 1px solid var(--border-soft);
+  border-top: 2px solid var(--gold);
+  padding: 52px 48px;
+  justify-content: space-between;
+}
+.pillar-companion {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 48px;
+}
+.pillar-companion .pillar {
+  padding-top: 28px;
+  border-top: 1px solid var(--border-strong);
+}
+.pillar-companion .pillar:first-child {
+  border-top-color: var(--gold);
+}
+.pillar-rubric {
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.62rem;
-  letter-spacing: 0.28em;
+  letter-spacing: 0.24em;
   text-transform: uppercase;
   color: var(--gold);
   display: block;
-  padding-top: 18px;
-  border-top: 1px solid var(--gold);
-  margin-bottom: 24px;
+  margin-bottom: 18px;
 }
 .pillar-name {
   font-family: 'Playfair Display', serif;
-  font-size: 2.4rem;
+  font-size: clamp(1.85rem, 3.2vw, 2.35rem);
   font-weight: 700;
   color: var(--ink-warm);
-  line-height: 1;
-  margin-bottom: 22px;
+  line-height: 1.08;
+  margin-bottom: 18px;
   font-style: normal;
+}
+.pillar.pillar-lead .pillar-name {
+  font-size: clamp(2.1rem, 3.6vw, 2.75rem);
+  margin-bottom: 22px;
 }
 .pillar-body {
   font-size: 1rem;
   line-height: 1.85;
   color: var(--muted);
+  margin-bottom: 24px;
+}
+.pillar-notes {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--ink-warm);
+  padding: 16px 0;
   margin-bottom: 28px;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  line-height: 1.8;
 }
 
-/* ── BOOKS (shelf, not grid) ── */
+/* ── BOOKS (feature + curated companion list) ── */
 .books-section {
   padding: 140px 0 160px;
   background: var(--cream-2);
 }
 .books-header {
-  max-width: 1100px;
-  margin: 0 auto 96px;
+  max-width: 1140px;
+  margin: 0 auto 88px;
   padding: 0 40px;
   display: grid;
   grid-template-columns: 1.3fr 1fr;
@@ -237,75 +308,114 @@
   padding-bottom: 6px;
 }
 .books-grid {
-  max-width: 1180px;
+  max-width: 1140px;
   margin: 0 auto;
   padding: 0 40px;
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  gap: 56px;
+  grid-template-columns: 1.28fr 1fr;
+  gap: 68px;
   align-items: start;
 }
 .book {
   text-decoration: none;
   color: inherit;
-  display: flex;
-  flex-direction: column;
   transition: transform 0.35s ease;
 }
-.book:hover { transform: translateY(-6px); }
+.book.featured {
+  background: var(--cream);
+  border: 1px solid var(--border);
+  padding: 44px;
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 40px;
+  align-items: center;
+  box-shadow: var(--shadow-sm);
+}
+.book.featured:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--gold);
+}
 .book-cover {
   aspect-ratio: 2 / 3;
   background: var(--cream-2);
   overflow: hidden;
-  margin-bottom: 32px;
   position: relative;
   box-shadow: var(--shadow-book);
   transition: box-shadow 0.35s ease;
 }
 .book:hover .book-cover {
-  box-shadow: 0 30px 60px rgba(31,24,18,0.28);
+  box-shadow: 0 26px 52px rgba(31,24,18,0.26);
 }
 .book-cover img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.book.featured .book-cover {
-  box-shadow: 0 28px 60px rgba(31,24,18,0.24);
+.book-dossier {
+  display: flex;
+  flex-direction: column;
 }
-.book-flag {
-  position: absolute;
-  top: 16px; left: 16px;
-  background: var(--gold-soft);
-  color: var(--gold-warm);
+.book-rubric {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.55rem;
+  font-size: 0.6rem;
   letter-spacing: 0.24em;
   text-transform: uppercase;
-  padding: 7px 12px;
-  z-index: 1;
-  border: 1px solid var(--gold);
+  color: var(--gold-warm);
+  margin-bottom: 12px;
 }
 .book-title {
   font-family: 'Playfair Display', serif;
-  font-size: 1.55rem;
+  font-size: 1.4rem;
   font-weight: 700;
   color: var(--ink-warm);
   line-height: 1.2;
-  margin-bottom: 14px;
+  margin-bottom: 10px;
   font-style: normal;
 }
-.book.featured .book-title { font-size: 1.9rem; }
+.book.featured .book-title {
+  font-size: clamp(1.75rem, 2.8vw, 2.2rem);
+  margin-bottom: 8px;
+}
+.book-subtitle {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.02rem;
+  color: var(--gold-warm);
+  margin-bottom: 18px;
+  line-height: 1.4;
+}
 .book-desc {
   font-size: 0.94rem;
   color: var(--muted);
-  line-height: 1.75;
-  margin-bottom: 22px;
-  flex-grow: 1;
+  line-height: 1.78;
+  margin-bottom: 0;
+}
+.book-review {
+  border-left: 2px solid rgba(197, 160, 89, 0.6);
+  padding-left: 16px;
+  margin: 22px 0 26px;
+}
+.book-review p {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 0.95rem;
+  color: var(--ink-warm);
+  line-height: 1.65;
+  margin-bottom: 10px;
+}
+.book-review cite {
+  display: block;
+  font-family: 'JetBrains Mono', monospace;
+  font-style: normal;
+  font-size: 0.58rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  line-height: 1.5;
 }
 .book-link {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.65rem;
+  font-size: 0.64rem;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--gold);
@@ -316,21 +426,65 @@
 }
 .book:hover .book-link { color: var(--gold-warm); border-color: var(--gold-warm); }
 
+.books-companion {
+  display: flex;
+  flex-direction: column;
+}
+.books-companion-label {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--gold);
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--gold);
+  margin-bottom: 28px;
+}
+.book.companion-item {
+  display: grid;
+  grid-template-columns: 92px 1fr;
+  gap: 26px;
+  align-items: start;
+  padding: 26px 0;
+  border-bottom: 1px solid var(--border);
+}
+.book.companion-item:first-of-type {
+  padding-top: 4px;
+}
+.book.companion-item:hover {
+  transform: translateX(4px);
+}
+.book.companion-item .book-cover {
+  margin-bottom: 0;
+  box-shadow: 0 10px 24px rgba(31,24,18,0.15);
+}
+.book.companion-item .book-desc {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  margin-bottom: 0;
+}
+.book.companion-item .book-review {
+  margin: 18px 0 22px;
+}
+.book.companion-item .book-review p {
+  font-size: 0.9rem;
+}
+
 .books-footer {
-  max-width: 1100px;
-  margin: 80px auto 0;
+  max-width: 1140px;
+  margin: 72px auto 0;
   padding: 0 40px;
   text-align: center;
 }
 
-/* ── WRITING (reading room) ── */
+/* ── WRITING (reading room, 3-essay editorial spread) ── */
 .writing {
   padding: 160px 0;
   background: var(--paper);
   border-top: 1px solid var(--border-soft);
 }
 .writing-header {
-  max-width: 1100px;
+  max-width: 1140px;
   margin: 0 auto 80px;
   padding: 0 40px;
   display: grid;
@@ -347,22 +501,29 @@
   padding-bottom: 6px;
 }
 .writing-grid {
-  max-width: 1100px;
+  max-width: 1140px;
   margin: 0 auto;
   padding: 0 40px;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: 1.15fr 1fr;
   gap: 36px;
+  align-items: stretch;
 }
 .medium-card {
   background: var(--cream);
-  padding: 44px 40px;
-  border: 1px solid transparent;
+  padding: 42px 38px;
+  border: 1px solid var(--border-soft);
   display: flex;
   flex-direction: column;
   text-decoration: none;
   color: inherit;
   transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+}
+.writing-grid .medium-card:first-child {
+  grid-row: span 2;
+  padding: 52px 46px;
+  border-left: 2px solid var(--gold);
+  justify-content: space-between;
 }
 .medium-card:hover {
   border-color: var(--gold);
@@ -375,16 +536,22 @@
   letter-spacing: 0.24em;
   text-transform: uppercase;
   color: var(--gold);
-  margin-bottom: 18px;
+  margin-bottom: 16px;
 }
 .medium-card-title {
   font-family: 'Playfair Display', serif;
-  font-size: 1.65rem;
+  font-size: clamp(1.4rem, 2.2vw, 1.65rem);
   font-weight: 700;
   color: var(--ink-warm);
   line-height: 1.22;
-  margin-bottom: 18px;
+  margin-bottom: 16px;
   font-style: normal;
+  text-wrap: balance;
+}
+.writing-grid .medium-card:first-child .medium-card-title {
+  font-size: clamp(1.75rem, 2.8vw, 2.25rem);
+  line-height: 1.16;
+  margin-bottom: 22px;
 }
 .medium-card-desc {
   font-size: 0.94rem;
@@ -392,10 +559,10 @@
   color: var(--muted);
   margin-bottom: 24px;
   flex-grow: 1;
-  display: -webkit-box;
-  -webkit-line-clamp: 3;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+}
+.writing-grid .medium-card:first-child .medium-card-desc {
+  font-size: 1.02rem;
+  line-height: 1.85;
 }
 .medium-card-meta {
   font-family: 'JetBrains Mono', monospace;
@@ -403,24 +570,16 @@
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: var(--muted-soft);
+  padding-top: 16px;
+  border-top: 1px solid var(--border-soft);
 }
 .medium-card-meta span:not(:last-child)::after {
   content: '·';
   margin: 0 10px;
   color: var(--muted-soft);
 }
-.medium-loading {
-  grid-column: 1 / -1;
-  text-align: center;
-  padding: 60px 20px;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.7rem;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
 .writing-footer {
-  max-width: 1100px;
+  max-width: 1140px;
   margin: 60px auto 0;
   padding: 0 40px;
   text-align: center;
@@ -473,12 +632,13 @@
 }
 .service-name {
   font-family: 'Playfair Display', serif;
-  font-size: 2.1rem;
+  font-size: clamp(1.65rem, 3.2vw, 2.1rem);
   font-weight: 700;
   color: var(--ink-warm);
-  line-height: 1.05;
+  line-height: 1.08;
   margin-bottom: 24px;
   font-style: normal;
+  text-wrap: balance;
 }
 .service-prose {
   font-size: 1rem;
@@ -526,13 +686,14 @@
 .meraki-band .eyebrow { color: var(--gold); margin-bottom: 26px; }
 .meraki-band h2 {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(2rem, 4.5vw, 3rem);
+  font-size: clamp(1.85rem, 4.5vw, 3rem);
   font-weight: 700;
   color: var(--cream);
   line-height: 1.15;
   letter-spacing: -0.02em;
   margin-bottom: 22px;
   font-style: normal;
+  text-wrap: balance;
 }
 .meraki-band h2 em { color: var(--gold); font-style: normal; font-weight: 700; }
 .meraki-band p {
@@ -559,13 +720,14 @@
 .practice .eyebrow { margin-bottom: 32px; }
 .practice-title {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(2rem, 4.2vw, 2.8rem);
+  font-size: clamp(1.85rem, 4.2vw, 2.8rem);
   font-weight: 400;
   color: var(--ink-warm);
   line-height: 1.2;
   letter-spacing: -0.015em;
   margin-bottom: 40px;
   font-style: normal;
+  text-wrap: balance;
 }
 .practice-title em { color: var(--gold-warm); font-style: normal; font-weight: 700; }
 .practice-prose {
@@ -608,13 +770,14 @@
 .contact .eyebrow { margin-bottom: 28px; }
 .contact h2 {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(2rem, 4.5vw, 3rem);
+  font-size: clamp(1.9rem, 4.5vw, 3rem);
   font-weight: 700;
   color: var(--ink-warm);
   line-height: 1.1;
   letter-spacing: -0.025em;
   margin-bottom: 26px;
   font-style: normal;
+  text-wrap: balance;
 }
 .contact h2 em { color: var(--gold); font-style: normal; font-weight: 700; }
 .contact p {
@@ -625,7 +788,7 @@
 }
 .contact-email {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-size: clamp(1.25rem, 3.8vw, 2.2rem);
   font-weight: 400;
   color: var(--ink-warm);
   text-decoration: none;
@@ -633,6 +796,7 @@
   margin-bottom: 48px;
   transition: color 0.2s;
   font-style: normal;
+  overflow-wrap: anywhere;
 }
 .contact-email:hover { color: var(--gold); }
 .contact-btns {
@@ -652,29 +816,52 @@
   .writing-header { grid-template-columns: 1fr; gap: 32px; }
   .pillars-grid,
   .books-grid,
-  .services-grid { grid-template-columns: 1fr; gap: 60px; }
+  .services-grid { grid-template-columns: 1fr; gap: 56px; }
   .writing-grid { grid-template-columns: 1fr; }
+  .writing-grid .medium-card:first-child { grid-row: auto; }
 }
 @media (max-width: 720px) {
-  .hero { padding-top: calc(var(--nav-h) + 80px); padding-bottom: 100px; }
-  .hero-inner { padding: 0 24px; gap: 48px; }
+  .hero { padding-top: calc(var(--nav-h) + 68px); padding-bottom: 92px; }
+  .hero-inner { padding: 0 24px; gap: 44px; }
+  .hero h1 {
+    font-size: clamp(2.05rem, 8vw, 2.75rem);
+    line-height: 1.08;
+    letter-spacing: -0.03em;
+    margin: 24px 0 24px;
+  }
+  .hero-sub { font-size: 1.05rem; margin-bottom: 32px; }
+  .hero-badges { gap: 10px 14px; padding: 14px 0; margin-bottom: 36px; }
   .colophon { padding: 22px 24px; }
   .colophon-items { gap: 20px; }
   .colophon-item:not(:last-child)::after { margin-left: 20px; }
   .pillars { padding: 100px 0; }
   .pillars-header,
   .pillars-grid { padding: 0 24px; }
-  .pillars-grid { gap: 48px; }
+  .pillars-grid { gap: 44px; }
+  .pillar.pillar-lead { padding: 36px 28px; }
   .books-section { padding: 100px 0; }
   .books-header,
   .books-grid,
   .books-footer { padding: 0 24px; }
   .books-grid { gap: 48px; }
+  .book.featured {
+    grid-template-columns: 1fr;
+    padding: 32px 26px;
+    gap: 28px;
+  }
+  .book.featured .book-cover {
+    max-width: 200px;
+  }
+  .book.companion-item {
+    grid-template-columns: 76px 1fr;
+    gap: 20px;
+  }
   .writing { padding: 100px 0; }
   .writing-header,
   .writing-grid,
   .writing-footer { padding: 0 24px; }
-  .medium-card { padding: 36px 28px; }
+  .medium-card,
+  .writing-grid .medium-card:first-child { padding: 34px 26px; }
   .services { padding: 100px 0; }
   .services-header,
   .services-grid { padding: 0 24px; }
@@ -684,6 +871,11 @@
   .practice-creds { font-size: 0.62rem; line-height: 2.4; }
   .contact { padding: 110px 0; }
   .contact-inner { padding: 0 24px; }
+}
+@media (max-width: 400px) {
+  .hero h1 { font-size: clamp(1.85rem, 7.6vw, 2.15rem); }
+  .hero-cred-sep { display: none; }
+  .hero-badges { flex-direction: column; align-items: flex-start; gap: 8px; }
 }
 
 /* Hero entrance animations */
@@ -719,11 +911,14 @@
       <div class="eyebrow has-rule">Soulful Tech · Builder · Writer · Practitioner</div>
       <h1>Builder. Writer. <em>Reiki Practitioner.</em></h1>
       <p class="hero-sub">I build software that respects the people who use it, write books about leadership, faith, and the cost of becoming, and practice Reiki because the work and the spirit are not separate things.</p>
-      <div class="hero-badges">
-        <span class="badge gold">Author of Four</span>
-        <span class="badge warm">Founder, Meraki is Love</span>
-        <span class="badge warm">CISSP Certified</span>
-        <span class="badge warm">20 Yrs Engineering</span>
+      <div class="hero-badges" aria-label="Credentials and background">
+        <span class="hero-cred accent"><strong>Author</strong> of Four</span>
+        <span class="hero-cred-sep" aria-hidden="true"></span>
+        <span class="hero-cred"><strong>Founder</strong>, Meraki is Love</span>
+        <span class="hero-cred-sep" aria-hidden="true"></span>
+        <span class="hero-cred"><strong>CISSP</strong> Certified</span>
+        <span class="hero-cred-sep" aria-hidden="true"></span>
+        <span class="hero-cred"><strong>20 Yrs</strong> Systems Engineering</span>
       </div>
       <div class="hero-btns">
         <a href="#books" class="btn btn-primary">Read the Books</a>
@@ -754,31 +949,36 @@
 <section class="pillars">
   <div class="pillars-header">
     <div>
-      <div class="eyebrow has-rule">Three Pillars</div>
+      <div class="eyebrow has-rule">Three Disciplines</div>
       <h2 class="section-title">Build. Write. <em>Practice.</em></h2>
     </div>
     <div class="pillars-header-right">
-      <p>Three streams of work, kept honest by the same standard. Each one is its own discipline, and each one feeds the others.</p>
+      <p>Three streams of work held to a single standard. Each one is its own craft, and each one sharpens the others.</p>
     </div>
   </div>
   <div class="pillars-grid">
-    <div class="pillar">
-      <span class="pillar-num">01 · Build</span>
-      <div class="pillar-name">Build</div>
-      <p class="pillar-body">Websites, custom apps, and private AI infrastructure for service businesses and founders. Built with intention, secured by default. The studio is Soulful Tech.</p>
+    <div class="pillar pillar-lead">
+      <div>
+        <span class="pillar-rubric">The Studio · Soulful Tech</span>
+        <h3 class="pillar-name">Build</h3>
+        <p class="pillar-body">Websites, custom applications, and private AI infrastructure for service businesses and founders. Every system is scoped, written, and secured firsthand by someone who has spent two decades in software and cybersecurity.</p>
+        <div class="pillar-notes">Custom Web · Document-Trained AI · Canopy Guard Security · Full-Stack Architecture</div>
+      </div>
       <a href="https://merakislove.com" target="_blank" rel="noopener" class="qlink">Visit the studio ↗</a>
     </div>
-    <div class="pillar">
-      <span class="pillar-num">02 · Write</span>
-      <div class="pillar-name">Write</div>
-      <p class="pillar-body">Four books in print. Weekly dispatches on Medium and Substack. Writing is how I think out loud, then sharpen it into something useful.</p>
-      <a href="/articles" class="qlink">Read the writing →</a>
-    </div>
-    <div class="pillar">
-      <span class="pillar-num">03 · Practice</span>
-      <div class="pillar-name">Practice</div>
-      <p class="pillar-body">Reiki Master and Karuna Reiki practitioner. One-on-one sessions and distance work for people moving through transition. Presence first, technique second.</p>
-      <a href="#practice" class="qlink">About the practice →</a>
+    <div class="pillar-companion">
+      <div class="pillar">
+        <span class="pillar-rubric">The Desk · Books &amp; Dispatches</span>
+        <h3 class="pillar-name">Write</h3>
+        <p class="pillar-body">Four books in print or in progress, alongside weekly essays on Medium and Substack. Writing is where twenty years of engineering, leadership, and lived faith get distilled into something durable.</p>
+        <a href="/articles" class="qlink">Read the writing →</a>
+      </div>
+      <div class="pillar">
+        <span class="pillar-rubric">The Table · Usui &amp; Karuna Lineage</span>
+        <h3 class="pillar-name">Practice</h3>
+        <p class="pillar-body">Reiki Master and Karuna Reiki practitioner. Quiet one-on-one sessions in Texas and distance work for clients moving through transition, grief, or recalibration. Presence first, technique second.</p>
+        <a href="#practice" class="qlink">About the practice →</a>
+      </div>
     </div>
   </div>
 </section>
@@ -788,45 +988,69 @@
   <div class="books-header">
     <div>
       <div class="eyebrow has-rule">The Books</div>
-      <h2 class="section-title">A shelf, <em>not a catalog.</em></h2>
+      <h2 class="section-title">A shelf built <em>book by book.</em></h2>
     </div>
     <div class="books-header-right">
-      <p>Three books in print. A fourth in progress. Each one written for a different reader, a different moment, a different question.</p>
+      <p>Three books in print and a fourth in manuscript. Each volume was written for a specific season and a specific question.</p>
     </div>
   </div>
   <div class="books-grid">
     <a href="https://www.amazon.com/stores/Adam-Mcclarin/author/B0G2L31YB8" target="_blank" rel="noopener" class="book featured">
       <div class="book-cover">
-        <span class="book-flag">Featured</span>
         <img src="/images/weight-of-the-mantle.png" alt="The Weight of the Mantle by Adam McClarin">
       </div>
-      <h3 class="book-title">The Weight of the Mantle</h3>
-      <p class="book-desc">A Leader's Journey from Control to Purpose. The unguarded account of twenty years across five corporate environments and what it costs to be genuinely good at leading people inside systems that were never designed for the full flourishing of the people inside them.</p>
-      <span class="book-link">Read on Amazon →</span>
-    </a>
-    <a href="https://www.amazon.com/AI-Prompt-Playbook-Mastering-Essential/dp/B0FK35P8TS" target="_blank" rel="noopener" class="book">
-      <div class="book-cover">
-        <img src="/images/ai-prompt-playbook.jpg" alt="The AI Prompt Playbook by Adam McClarin">
+      <div class="book-dossier">
+        <span class="book-rubric">Featured Volume · Leadership &amp; Memoir</span>
+        <h3 class="book-title">The Weight of the Mantle</h3>
+        <div class="book-subtitle">A Leader's Journey from Control to Purpose</div>
+        <p class="book-desc">The unguarded account of twenty years across five corporate environments, and what it costs to lead people well inside systems that were never designed for their flourishing.</p>
+        <blockquote class="book-review">
+          <p>“Not another corporate leadership manual. An honest, unguarded reckoning with what authority actually demands of your soul when systems fail the people inside them.”</p>
+          <cite>— Reader Review, Enterprise Technology Leader</cite>
+        </blockquote>
+        <span class="book-link">Read on Amazon →</span>
       </div>
-      <h3 class="book-title">The AI Prompt Playbook</h3>
-      <p class="book-desc">Mastering Gemini, Grok, and ChatGPT. A guide to crafting prompts that actually work. Beginner-to-advanced examples, ethical AI use, and the techniques behind the writing tools millions are now using daily.</p>
-      <span class="book-link">Read on Amazon →</span>
     </a>
-    <a href="https://www.amazon.com/stores/Adam-Mcclarin/author/B0G2L31YB8" target="_blank" rel="noopener" class="book">
-      <div class="book-cover">
-        <img src="/images/daily-routine-reset.jpeg" alt="Daily Routine Reset by Adam McClarin">
-      </div>
-      <h3 class="book-title">Daily Routine Reset</h3>
-      <p class="book-desc">A customizable template for peaceful mornings and evenings. Built for parents juggling the laundry, the meals, the meltdowns, and the quiet pockets of self. Flexible framework, not rigid schedule.</p>
-      <span class="book-link">Read on Amazon →</span>
-    </a>
+    <div class="books-companion">
+      <div class="books-companion-label">Companion Volumes</div>
+      <a href="https://www.amazon.com/AI-Prompt-Playbook-Mastering-Essential/dp/B0FK35P8TS" target="_blank" rel="noopener" class="book companion-item">
+        <div class="book-cover">
+          <img src="/images/ai-prompt-playbook.jpg" alt="The AI Prompt Playbook by Adam McClarin">
+        </div>
+        <div class="book-dossier">
+          <span class="book-rubric">Field Guide · Applied AI</span>
+          <h3 class="book-title">The AI Prompt Playbook</h3>
+          <p class="book-desc">Mastering Gemini, Grok, and ChatGPT. Practical frameworks, ethical guardrails, and clear techniques for getting real work out of modern language models.</p>
+          <blockquote class="book-review">
+            <p>“Cuts straight through the hype. Battle-tested prompt architectures from an engineer who actually builds and deploys systems.”</p>
+            <cite>— Reader Review, Systems Architect</cite>
+          </blockquote>
+          <span class="book-link">Read on Amazon →</span>
+        </div>
+      </a>
+      <a href="https://www.amazon.com/stores/Adam-Mcclarin/author/B0G2L31YB8" target="_blank" rel="noopener" class="book companion-item">
+        <div class="book-cover">
+          <img src="/images/daily-routine-reset.jpeg" alt="Daily Routine Reset by Adam McClarin">
+        </div>
+        <div class="book-dossier">
+          <span class="book-rubric">Handbook · Home &amp; Rhythm</span>
+          <h3 class="book-title">Daily Routine Reset</h3>
+          <p class="book-desc">A customizable template for peaceful mornings and evenings, built for parents balancing meals, meltdowns, and quiet pockets of stillness.</p>
+          <blockquote class="book-review">
+            <p>“The only routine framework that accounts for the chaos of real parenting. It doesn't ask you to wake up at 4 AM; it gives you your breath back.”</p>
+            <cite>— Reader Review, Parent of Three</cite>
+          </blockquote>
+          <span class="book-link">Read on Amazon →</span>
+        </div>
+      </a>
+    </div>
   </div>
   <div class="books-footer">
     <a href="https://www.amazon.com/stores/Adam-Mcclarin/author/B0G2L31YB8" target="_blank" rel="noopener" class="qlink">View Full Author Page on Amazon ↗</a>
   </div>
 </section>
 
-<!-- WRITING (live Medium feed) -->
+<!-- WRITING (curated evergreen fallback + live Medium feed) -->
 <section class="writing">
   <div class="writing-header">
     <div>
@@ -834,12 +1058,35 @@
       <h2 class="section-title">Words from <em>the desk.</em></h2>
     </div>
     <div class="writing-header-right">
-      <p>Medium dispatches and Substack pieces on leadership, building with intention, and the work that lives behind the work. New posts publish as they finish.</p>
+      <p>Medium essays and Substack dispatches on leadership, building with intention, and the craft behind the code. New pieces publish as they finish.</p>
     </div>
     <a href="/articles" class="qlink">All Writing →</a>
   </div>
   <div class="writing-grid" id="medium-grid">
-    <div class="medium-loading">Loading recent posts...</div>
+    <a href="https://adammcclarin.medium.com/the-claude-effect-c1202eec969a" target="_blank" rel="noopener" class="medium-card">
+      <div>
+        <div class="medium-card-label">Essay · Design &amp; Voice</div>
+        <h3 class="medium-card-title">The Claude Effect</h3>
+        <p class="medium-card-desc">I can spot an unguided AI website from across the room now—I built one myself before I learned to see it. When you give a model a request with no direction, it hands back its safest good taste. Here is how I use a skill file to make sure the work sounds and looks like the human behind it.</p>
+      </div>
+      <div class="medium-card-meta"><span>Oct 14, 2026</span><span>4 min read</span></div>
+    </a>
+    <a href="https://adammcclarin.medium.com/i-wrote-like-this-before-the-machines-did-b6d72f143726" target="_blank" rel="noopener" class="medium-card">
+      <div>
+        <div class="medium-card-label">Essay · Craft &amp; Security</div>
+        <h3 class="medium-card-title">I Wrote Like This Before the Machines Did</h3>
+        <p class="medium-card-desc">Twenty years of security writing taught me to be short and exact. Now short and exact gets called AI. When judging whether a person is behind a piece, look for a detail that cost them something to learn.</p>
+      </div>
+      <div class="medium-card-meta"><span>Sep 29, 2026</span><span>3 min read</span></div>
+    </a>
+    <a href="https://adammcclarin.medium.com/check-their-website-before-you-trust-their-ad-b3761380a563" target="_blank" rel="noopener" class="medium-card">
+      <div>
+        <div class="medium-card-label">Dispatch · Systems &amp; Trust</div>
+        <h3 class="medium-card-title">Check Their Website Before You Trust Their Ad</h3>
+        <p class="medium-card-desc">Why my studio grows on referrals, and the public audit I run before anyone takes a client’s money. Your own website is the clearest measure of how a client’s project will be treated once nobody is watching.</p>
+      </div>
+      <div class="medium-card-meta"><span>Oct 26, 2026</span><span>5 min read</span></div>
+    </a>
   </div>
 </section>
 
@@ -954,12 +1201,51 @@
 })();
 </script>
 
-<!-- Medium RSS feed via rss2json -->
+<!-- Medium RSS feed with curated static fallback -->
 <script>
 (function() {
   const grid = document.getElementById('medium-grid');
   if (!grid) return;
-  const feed = 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent('https://medium.com/feed/@adammcclarin');
+
+  const FALLBACK_POSTS = [
+    {
+      label: 'Essay · Design & Voice',
+      title: 'The Claude Effect',
+      desc: 'I can spot an unguided AI website from across the room now—I built one myself before I learned to see it. When you give a model a request with no direction, it hands back its safest good taste. Here is how I use a skill file to make sure the work sounds and looks like the human behind it.',
+      date: 'Oct 14, 2026',
+      read: '4 min read',
+      link: 'https://adammcclarin.medium.com/the-claude-effect-c1202eec969a'
+    },
+    {
+      label: 'Essay · Craft & Security',
+      title: 'I Wrote Like This Before the Machines Did',
+      desc: 'Twenty years of security writing taught me to be short and exact. Now short and exact gets called AI. When judging whether a person is behind a piece, look for a detail that cost them something to learn.',
+      date: 'Sep 29, 2026',
+      read: '3 min read',
+      link: 'https://adammcclarin.medium.com/i-wrote-like-this-before-the-machines-did-b6d72f143726'
+    },
+    {
+      label: 'Dispatch · Systems & Trust',
+      title: 'Check Their Website Before You Trust Their Ad',
+      desc: 'Why my studio grows on referrals, and the public audit I run before anyone takes a client’s money. Your own website is the clearest measure of how a client’s project will be treated once nobody is watching.',
+      date: 'Oct 26, 2026',
+      read: '5 min read',
+      link: 'https://adammcclarin.medium.com/check-their-website-before-you-trust-their-ad-b3761380a563'
+    }
+  ];
+
+  function renderCards(posts) {
+    grid.innerHTML = posts.map(item => (
+      '<a href="' + item.link + '" target="_blank" rel="noopener" class="medium-card">'
+      + '<div>'
+      + '<div class="medium-card-label">' + item.label + '</div>'
+      + '<h3 class="medium-card-title">' + item.title + '</h3>'
+      + '<p class="medium-card-desc">' + item.desc + '</p>'
+      + '</div>'
+      + '<div class="medium-card-meta"><span>' + item.date + '</span><span>' + item.read + '</span></div>'
+      + '</a>'
+    )).join('');
+  }
 
   function stripHtml(html) {
     const tmp = document.createElement('div');
@@ -976,27 +1262,32 @@
     return Math.max(1, Math.round(words / 220)) + ' min read';
   }
 
+  const feed = 'https://api.rss2json.com/v1/api.json?rss_url=' + encodeURIComponent('https://medium.com/feed/@adammcclarin');
+
   fetch(feed)
-    .then(r => r.json())
+    .then(r => r.ok ? r.json() : Promise.reject(new Error('Feed unavailable')))
     .then(data => {
-      if (!data || data.status !== 'ok' || !Array.isArray(data.items)) {
-        grid.innerHTML = '<div class="medium-loading">Could not load posts. Read everything on Medium.</div>';
+      if (!data || data.status !== 'ok' || !Array.isArray(data.items) || data.items.length < 3) {
+        if (!grid.children.length) renderCards(FALLBACK_POSTS);
         return;
       }
-      const items = data.items.slice(0, 4);
-      grid.innerHTML = items.map(item => {
-        const desc = stripHtml(item.description).slice(0, 220);
-        const date = formatDate(item.pubDate);
-        return '<a href="' + item.link + '" target="_blank" rel="noopener" class="medium-card">'
-          + '<div class="medium-card-label">Medium</div>'
-          + '<h3 class="medium-card-title">' + item.title + '</h3>'
-          + '<p class="medium-card-desc">' + desc + '</p>'
-          + '<div class="medium-card-meta"><span>' + date + '</span><span>' + readTime(stripHtml(item.description)) + '</span></div>'
-          + '</a>';
-      }).join('');
+      const items = data.items.slice(0, 3).map((item, idx) => {
+        const plain = stripHtml(item.description);
+        const maxLen = idx === 0 ? 310 : 210;
+        const desc = plain.length > maxLen ? plain.slice(0, maxLen).replace(/\s+\S*$/, '') + '…' : plain;
+        return {
+          label: 'Medium · Dispatch',
+          title: item.title,
+          desc: desc,
+          date: formatDate(item.pubDate),
+          read: readTime(plain),
+          link: item.link
+        };
+      });
+      renderCards(items);
     })
     .catch(() => {
-      grid.innerHTML = '<div class="medium-loading">Could not load posts. Read everything on Medium.</div>';
+      if (!grid.children.length) renderCards(FALLBACK_POSTS);
     });
 })();
 </script>

@@ -88,12 +88,13 @@ em, i, .italic { font-style: normal; }
 
 h2.section-title {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(2.6rem, 5.5vw, 4.4rem);
+  font-size: clamp(2rem, 4.8vw + 0.35rem, 4.4rem);
   font-weight: 700;
   color: var(--ink-warm);
-  line-height: 1.02;
+  line-height: 1.06;
   letter-spacing: -0.03em;
   font-style: normal;
+  text-wrap: balance;
 }
 h2.section-title em { color: var(--gold); font-style: normal; font-weight: 700; }
 
@@ -285,6 +286,31 @@ nav.site-nav {
 .badge.gold { border-color: var(--gold); color: var(--gold-warm); background: var(--gold-soft); }
 .badge.warm { border-color: var(--border-strong); color: var(--ink-warm); background: var(--paper); }
 
+/* ── BOOK READER REVIEWS ── */
+.book-review {
+  border-left: 2px solid rgba(197, 160, 89, 0.6);
+  padding-left: 16px;
+  margin: 22px 0 26px;
+}
+.book-review p {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 0.94rem;
+  line-height: 1.65;
+  color: var(--ink-warm);
+  margin-bottom: 10px;
+}
+.book-review cite {
+  display: block;
+  font-family: 'JetBrains Mono', monospace;
+  font-style: normal;
+  font-size: 0.58rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--muted);
+  line-height: 1.5;
+}
+
 /* ── PAGE HEADER (interior pages: gallery, articles) ── */
 .page-header {
   padding: calc(var(--nav-h) + 120px) 0 100px;
@@ -303,12 +329,13 @@ nav.site-nav {
 .page-header .eyebrow { margin-bottom: 24px; }
 .page-header h1 {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(2.8rem, 6vw, 4.8rem);
+  font-size: clamp(2.1rem, 5.2vw + 0.35rem, 4.8rem);
   font-weight: 700;
   color: var(--ink-warm);
-  line-height: 1;
+  line-height: 1.05;
   letter-spacing: -0.03em;
   font-style: normal;
+  text-wrap: balance;
 }
 .page-header h1 em { color: var(--gold); font-style: normal; font-weight: 700; }
 .page-header-right p {
@@ -327,12 +354,13 @@ nav.site-nav {
 .pullquote-inner { max-width: 820px; margin: 0 auto; }
 .pullquote blockquote {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(1.5rem, 3vw, 2.2rem);
+  font-size: clamp(1.35rem, 3vw, 2.2rem);
   font-weight: 400;
   line-height: 1.45;
   color: var(--ink-warm);
   font-style: normal;
   letter-spacing: -0.005em;
+  text-wrap: balance;
 }
 .pullquote cite {
   display: block;
@@ -370,13 +398,14 @@ nav.site-nav {
 .cta-band .eyebrow { color: var(--gold); margin-bottom: 26px; }
 .cta-band h2 {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(2.2rem, 5vw, 3.6rem);
+  font-size: clamp(1.85rem, 4.5vw + 0.3rem, 3.6rem);
   font-weight: 700;
   color: var(--cream);
   line-height: 1.1;
   letter-spacing: -0.025em;
   margin-bottom: 26px;
   font-style: normal;
+  text-wrap: balance;
 }
 .cta-band h2 em { color: var(--gold); font-style: normal; font-weight: 700; }
 .cta-band p {
@@ -417,7 +446,7 @@ footer.site-footer .footer-tagline {
 }
 footer.site-footer .footer-email {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(1.5rem, 4vw, 2.4rem);
+  font-size: clamp(1.25rem, 3.8vw, 2.4rem);
   font-weight: 400;
   color: var(--cream);
   text-decoration: none;
@@ -425,6 +454,7 @@ footer.site-footer .footer-email {
   margin-bottom: 56px;
   transition: color 0.2s;
   font-style: normal;
+  overflow-wrap: anywhere;
 }
 footer.site-footer .footer-email:hover { color: var(--gold); }
 footer.site-footer .footer-links {

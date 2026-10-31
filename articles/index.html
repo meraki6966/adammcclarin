@@ -108,12 +108,13 @@
 }
 .medium-card-title {
   font-family: 'Playfair Display', serif;
-  font-size: 1.65rem;
+  font-size: clamp(1.38rem, 2.2vw, 1.65rem);
   font-weight: 700;
   color: var(--ink-warm);
   line-height: 1.22;
   margin-bottom: 18px;
   font-style: normal;
+  text-wrap: balance;
 }
 .medium-card-desc {
   font-size: 0.94rem;
@@ -138,16 +139,6 @@
   margin: 0 10px;
   color: var(--muted-soft);
 }
-.medium-loading {
-  grid-column: 1 / -1;
-  text-align: center;
-  padding: 60px 20px;
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.7rem;
-  letter-spacing: 0.24em;
-  text-transform: uppercase;
-  color: var(--muted);
-}
 
 /* ── SUBSTACK SECTION (warmer, less formal) ── */
 .substack-section {
@@ -166,13 +157,14 @@
 .substack-content .eyebrow { margin-bottom: 22px; }
 .substack-content h2 {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(2rem, 4.5vw, 3rem);
+  font-size: clamp(1.85rem, 4.5vw, 3rem);
   font-weight: 700;
   color: var(--ink-warm);
   line-height: 1.1;
   letter-spacing: -0.025em;
   margin-bottom: 26px;
   font-style: normal;
+  text-wrap: balance;
 }
 .substack-content h2 em { color: var(--gold); font-style: normal; font-weight: 700; }
 .substack-content p {
@@ -357,7 +349,42 @@
     <a href="https://medium.com/@adammcclarin" target="_blank" rel="noopener" class="qlink">All on Medium ↗</a>
   </div>
   <div class="medium-grid" id="medium-grid">
-    <div class="medium-loading">Loading recent posts...</div>
+    <a href="https://adammcclarin.medium.com/the-claude-effect-c1202eec969a" target="_blank" rel="noopener" class="medium-card">
+      <div class="medium-card-label">Essay · Design &amp; Voice</div>
+      <h3 class="medium-card-title">The Claude Effect</h3>
+      <p class="medium-card-desc">I can spot an unguided AI website from across the room now—I built one myself before I learned to see it. When you give a model a request with no direction, it hands back its safest good taste. Here is how I use a skill file to keep the work unmistakably human.</p>
+      <div class="medium-card-meta"><span>Oct 14, 2026</span><span>4 min read</span></div>
+    </a>
+    <a href="https://adammcclarin.medium.com/i-wrote-like-this-before-the-machines-did-b6d72f143726" target="_blank" rel="noopener" class="medium-card">
+      <div class="medium-card-label">Essay · Craft &amp; Security</div>
+      <h3 class="medium-card-title">I Wrote Like This Before the Machines Did</h3>
+      <p class="medium-card-desc">Twenty years of security writing taught me to be short and exact. Now short and exact gets called AI. When judging whether a person is behind a piece, look for a detail that cost them something to learn.</p>
+      <div class="medium-card-meta"><span>Sep 29, 2026</span><span>3 min read</span></div>
+    </a>
+    <a href="https://adammcclarin.medium.com/check-their-website-before-you-trust-their-ad-b3761380a563" target="_blank" rel="noopener" class="medium-card">
+      <div class="medium-card-label">Dispatch · Systems &amp; Trust</div>
+      <h3 class="medium-card-title">Check Their Website Before You Trust Their Ad</h3>
+      <p class="medium-card-desc">Why my studio grows on referrals, and the public audit I run before anyone takes a client’s money. Your own website is the clearest measure of how a client’s project will be treated once nobody is watching.</p>
+      <div class="medium-card-meta"><span>Oct 26, 2026</span><span>5 min read</span></div>
+    </a>
+    <a href="https://adammcclarin.medium.com/before-you-pick-an-ai-model-read-the-scoreboard-and-the-fine-print-6a43e3fef9e5" target="_blank" rel="noopener" class="medium-card">
+      <div class="medium-card-label">Field Guide · AI Benchmarks</div>
+      <h3 class="medium-card-title">Before You Pick an AI Model, Read the Scoreboard (and the Fine Print)</h3>
+      <p class="medium-card-desc">What Artificial Analysis measures, who it helps, and where its numbers stop. If you build with AI, or pay for it, which number do you trust and what do you do with it?</p>
+      <div class="medium-card-meta"><span>Oct 28, 2026</span><span>5 min read</span></div>
+    </a>
+    <a href="https://journal.messyfounder.com/a-pricing-page-decided-how-much-my-ai-could-do-b45d2f8c00d8" target="_blank" rel="noopener" class="medium-card">
+      <div class="medium-card-label">Messy Founder · Architecture</div>
+      <h3 class="medium-card-title">A Pricing Page Decided How Much My AI Could Do</h3>
+      <p class="medium-card-desc">The failures I hit most in practice are ordinary: the agent works, and the data source it depends on hits a billing cap. A plan tier is an architectural decision, whether you treat it as one or not.</p>
+      <div class="medium-card-meta"><span>Oct 7, 2026</span><span>4 min read</span></div>
+    </a>
+    <a href="https://medium.com/it-chronicles/my-scanner-said-my-website-was-failing-and-the-scanner-was-wrong-a4df7955930f" target="_blank" rel="noopener" class="medium-card">
+      <div class="medium-card-label">IT Chronicles · Software Testing</div>
+      <h3 class="medium-card-title">My Scanner Said My Website Was Failing, and the Scanner Was Wrong</h3>
+      <p class="medium-card-desc">What a false 72 taught me about testing tools built to grade other people’s work. Any tool grading other people’s work has to prove its own work has been graded—and a test that has never failed has proven nothing.</p>
+      <div class="medium-card-meta"><span>Oct 5, 2026</span><span>4 min read</span></div>
+    </a>
   </div>
 </section>
 
@@ -429,7 +456,7 @@
 })();
 </script>
 
-<!-- Medium RSS feed via rss2json (6 articles) -->
+<!-- Medium RSS feed via rss2json with static fallback -->
 <script>
 (function() {
   const grid = document.getElementById('medium-grid');
@@ -452,26 +479,26 @@
   }
 
   fetch(feed)
-    .then(r => r.json())
+    .then(r => r.ok ? r.json() : Promise.reject(new Error('Feed unavailable')))
     .then(data => {
-      if (!data || data.status !== 'ok' || !Array.isArray(data.items)) {
-        grid.innerHTML = '<div class="medium-loading">Could not load posts. Read everything on Medium.</div>';
+      if (!data || data.status !== 'ok' || !Array.isArray(data.items) || !data.items.length) {
         return;
       }
       const items = data.items.slice(0, 6);
       grid.innerHTML = items.map(item => {
-        const desc = stripHtml(item.description).slice(0, 240);
+        const plain = stripHtml(item.description);
+        const desc = plain.length > 240 ? plain.slice(0, 240).replace(/\s+\S*$/, '') + '…' : plain;
         const date = formatDate(item.pubDate);
         return '<a href="' + item.link + '" target="_blank" rel="noopener" class="medium-card">'
-          + '<div class="medium-card-label">Medium</div>'
+          + '<div class="medium-card-label">Medium · Dispatch</div>'
           + '<h3 class="medium-card-title">' + item.title + '</h3>'
           + '<p class="medium-card-desc">' + desc + '</p>'
-          + '<div class="medium-card-meta"><span>' + date + '</span><span>' + readTime(stripHtml(item.description)) + '</span></div>'
+          + '<div class="medium-card-meta"><span>' + date + '</span><span>' + readTime(plain) + '</span></div>'
           + '</a>';
       }).join('');
     })
     .catch(() => {
-      grid.innerHTML = '<div class="medium-loading">Could not load posts. Read everything on Medium.</div>';
+      /* Preserve curated static essays in #medium-grid */
     });
 })();
 </script>
